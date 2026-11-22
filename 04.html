@@ -2,15 +2,16 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第4章 猜疑链与技术爆炸</title>
     <link rel="stylesheet" href="theme.css">
 </head>
 <body>
+<a class="skip-link" href="#content">跳转至正文</a>
 <div class="double-border">
 <div class="container">
-    <div class="sidebar">
-        <h3>🌌 课程目录</h3>
+    <nav class="sidebar" aria-label="课程目录">
+        <p class="sidebar-title">🌌 课程目录</p>
         <ul class="chapter-list">
             <li><a href="01.html">第1章 宇宙社会学的诞生</a></li>
             <li><a href="02.html">第2章 第一公理：生存是文明的第一需要</a></li>
@@ -28,16 +29,32 @@
             <li><a href="14.html">第14章 思想实验的极限：超越黑暗森林的可能性</a></li>
             <li><a href="15.html">第15章 寂静的回响：宇宙社会学的终极命题</a></li>
         </ul>
-    </div>
+    </nav>
     <div class="main-content">
+    <main id="content">
+    <article>
+        <header class="article-header">
+            <h1>第4章 猜疑链与技术爆炸</h1>
+            <p class="dek">这一章把两个概念拆成可检验的部件：<strong>猜疑链</strong>是一个不收敛的递归（每层知识都建立在对上一层意图的未知上），<strong>技术爆炸</strong>是一条让力量对比失效的非线性曲线。两者叠在一起，才把“接触”从风险变成死锁。</p>
+        </header>
+        <nav class="section-toc" aria-label="本章小节">
+            <p class="section-toc-title">本章小节</p>
+            <ol>
+                <li><a href="#sec-1">猜疑链：善意与恶意为什么不可判断？</a></li>
+                <li><a href="#sec-2">猜疑链的形式化——博弈矩阵与无限递归</a></li>
+                <li><a href="#sec-3">技术爆炸：为什么弱小者更危险？</a></li>
+                <li><a href="#sec-4">耦合效应：猜疑链+技术爆炸=逻辑死锁</a></li>
+            </ol>
+        </nav>
 
-        <h2>第4章 猜疑链与技术爆炸</h2>
+
+        
 
         <p>大家好，我是你们的讲师。前两章我们做了地基检测——两条公理，四个子命题，逐一审视。现在进入宇宙社会学推导中最精妙、也最残酷的环节。如果你问我，整个黑暗森林理论中最具原创性的贡献是什么，我的答案不是公理，而是本章的两个概念：<strong>猜疑链（Chain of Suspicion）</strong>和<strong>技术爆炸（Technological Explosion）</strong>。</p>
 
         <p>公理部分叶文洁已经完成了，而猜疑链和技术爆炸——罗辑的原创性贡献。这两个概念就像两个齿轮，啮合在一起之后，产生了一个令人窒息的逻辑锁死。让我们一步步走近这个锁死的核心。</p>
 
-        <h3>猜疑链：善意与恶意为什么不可判断？</h3>
+        <h2 id="sec-1">猜疑链：善意与恶意为什么不可判断？</h2>
 
         <p>猜疑链的核心思想非常简洁：<strong>当两个文明第一次接触时，没有任何一方能够确定对方的意图。</strong>对方是善意的吗？是恶意的吗？甚至——对方是否具备"善意"和"恶意"的概念？</p>
 
@@ -45,7 +62,7 @@
 
         <p>让我们模拟一下两个文明第一次接触时的推理过程：</p>
 
-        <pre><code>猜疑链的递归结构
+        <pre tabindex="0" role="region" aria-label="结构与推导示意" style="overflow-x:auto;max-width:100%"><code>猜疑链的递归结构
 ========================
 文明A："我不知道文明B是善意还是恶意。"
 
@@ -78,7 +95,7 @@
             <strong>猜疑链的现实版本：</strong>冷战时期的"安全困境"（security dilemma）就是猜疑链在地缘政治中的精确映射。苏联看到美国部署导弹，认为这是进攻意图；美国看到苏联部署导弹，也认为这是进攻意图。双方都无法相信对方的"防御性"声明。但冷战时期的安全困境最终通过军备控制协议和热线电话得到了管理。为什么？因为美苏之间有一个<em>最低限度的共享框架</em>——双方都承认对方的存在是既定事实，都不愿意核毁灭。而星际文明之间，连这个最低限度的框架都无法建立。
         </div>
 
-        <h3>猜疑链的形式化——博弈矩阵与无限递归</h3>
+        <h2 id="sec-2">猜疑链的形式化——博弈矩阵与无限递归</h2>
 
         <p>让我们用博弈论来形式化猜疑链。假设文明A和文明B相遇，各自有两个选项：<strong>攻击（Attack）</strong>或<strong>不攻击（Not Attack）</strong>。但这里的收益不是数字，而是符号——因为我们不知道对方的估值函数。</p>
 
@@ -105,7 +122,7 @@
 
         <p>这里有一个很深的数学问题：猜疑链是否真的无限递归，还是说可以在有限步内收敛？让我们看一个抽象的形式化：</p>
 
-        <pre><code>猜疑链的形式化表达
+        <pre tabindex="0" role="region" aria-label="结构与推导示意" style="overflow-x:auto;max-width:100%"><code>猜疑链的形式化表达
 ========================
 定义：
 K_A(P) = "文明A知道命题P"
@@ -134,7 +151,67 @@ K_A(K_B(K_A(...(¬K_{?}(善意_{?})...)))
 
         <p>猜疑链的无限递归意味着一个问题：在缺乏任何外部锚点（如共享价值、沟通协议、第三方仲裁）的情况下，单纯通过理性推理无法打破猜疑链。这是数学结论，不是道德判断。</p>
 
-        <h3>技术爆炸：为什么弱小者更危险？</h3>
+        <figure>
+            <svg role="img" aria-labelledby="fig-ch4-title fig-ch4-desc" viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg">
+                <title id="fig-ch4-title">猜疑链的递归阶梯与技术爆炸的追赶曲线</title>
+                <desc id="fig-ch4-desc">左侧是逐层加高的猜疑递归阶梯，从第 0 层一直延伸到第 n 层且不收敛；右侧是同一张坐标系上的两条技术能力曲线，强者线性增长、弱者指数增长，两者相交处标志着力量对比反转；底部标出两者的结合导致的逻辑死锁。</desc>
+                <defs>
+                    <marker id="ch4Arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+                        <path d="M0,0 L7,3 L0,6 z" fill="#7461ba"/>
+                    </marker>
+                </defs>
+                <g font-family="system-ui,'PingFang SC','Microsoft YaHei',sans-serif">
+                    <text x="40" y="44" font-size="14.5" font-weight="700" fill="#4b3d85">猜疑链：递归不收敛</text>
+                    <rect x="40" y="64" width="380" height="44" rx="10" fill="#f4f0fb" stroke="#7461ba" stroke-width="1.6"/>
+                    <text x="56" y="92" font-size="12.5" fill="#203035">第 0 层：A 不知道 B 的意图</text>
+                    <rect x="40" y="124" width="380" height="44" rx="10" fill="#f4f0fb" stroke="#7461ba" stroke-width="1.6"/>
+                    <text x="56" y="152" font-size="12.5" fill="#203035">第 1 层：A 知道 B 不知道 A 的意图</text>
+                    <rect x="40" y="184" width="380" height="44" rx="10" fill="#f4f0fb" stroke="#7461ba" stroke-width="1.6"/>
+                    <text x="56" y="212" font-size="12.5" fill="#203035">第 2 层：A 知道 B 知道 A 不知道 B 的意图</text>
+                    <rect x="40" y="248" width="380" height="48" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.8" stroke-dasharray="7 5"/>
+                    <text x="56" y="278" font-size="12.5" fill="#b91c1c">第 n 层：n → ∞，递归永不终止</text>
+                    <line x1="60" y1="108" x2="60" y2="122" stroke="#7461ba" stroke-width="2" marker-end="url(#ch4Arrow)"/>
+                    <line x1="60" y1="168" x2="60" y2="182" stroke="#7461ba" stroke-width="2" marker-end="url(#ch4Arrow)"/>
+                    <line x1="60" y1="228" x2="60" y2="246" stroke="#7461ba" stroke-width="2" marker-end="url(#ch4Arrow)"/>
+                    <text x="40" y="330" font-size="12.5" fill="#916c22">缺乏共享价值、共享语言与第三方仲裁时，</text>
+                    <text x="40" y="350" font-size="12.5" fill="#916c22">单纯推理无法给出终止条件。</text>
+
+                    <text x="480" y="44" font-size="14.5" font-weight="700" fill="#0f5f60">技术爆炸：力量对比会反转</text>
+                    <line x1="500" y1="300" x2="806" y2="300" stroke="#53676d" stroke-width="1.6"/>
+                    <line x1="500" y1="300" x2="500" y2="92" stroke="#53676d" stroke-width="1.6"/>
+                    <text x="760" y="322" font-size="12" fill="#53676d">时间 →</text>
+                    <text x="506" y="88" font-size="12" fill="#53676d">技术能力 ↑</text>
+                    <line x1="500" y1="282" x2="800" y2="118" stroke="#147f80" stroke-width="2.6"/>
+                    <path d="M500,292 C596,290 656,272 712,214 C752,172 780,124 800,104" fill="none" stroke="#d06d4d" stroke-width="2.6"/>
+                    <circle cx="716" cy="208" r="6" fill="none" stroke="#b91c1c" stroke-width="2.4"/>
+                    <text x="540" y="150" font-size="12" fill="#b91c1c">力量对比反转</text>
+                    <line x1="610" y1="156" x2="710" y2="200" stroke="#b91c1c" stroke-width="1.2" stroke-dasharray="4 3"/>
+                    <line x1="506" y1="336" x2="546" y2="336" stroke="#147f80" stroke-width="2.6"/>
+                    <text x="552" y="340" font-size="12" fill="#203035">强者：线性增长</text>
+                    <line x1="506" y1="362" x2="546" y2="362" stroke="#d06d4d" stroke-width="2.6"/>
+                    <text x="552" y="366" font-size="12" fill="#203035">弱者：指数增长（后来的文明可能弯道超车）</text>
+
+                    <rect x="200" y="386" width="460" height="64" rx="14" fill="#fbf1e2" stroke="#916c22" stroke-width="2"/>
+                    <text x="430" y="414" text-anchor="middle" font-size="14" font-weight="700" fill="#71520f">猜疑链 × 技术爆炸 ⇒ 逻辑死锁</text>
+                    <text x="430" y="436" text-anchor="middle" font-size="12.5" fill="#203035">等待即风险，于是“先发制人”被推为占优策略</text>
+                </g>
+            </svg>
+            <figcaption>两个机制必须分开看：左栏是<strong>猜疑链</strong>——它不是“不信任”的程度问题，而是递归没有终止条件；右栏是<strong>技术爆炸</strong>——它使“当前谁强”失去预测力，两条曲线相交处就是力量对比反转点。底部才是二者耦合后的结论。图中曲线是<strong>教学示意</strong>（只表达线性与指数增长的定性差异），坐标轴无单位，不代表任何实测数据。</figcaption>
+        </figure>
+
+        <div class="widget" id="suspicion-widget">
+            <h3>交互：把猜疑链逐层展开</h3>
+            <div class="controls" role="group" aria-label="选择递归层数">
+                <button type="button" data-step="0" aria-pressed="true">第 0 层</button>
+                <button type="button" data-step="1" aria-pressed="false">第 1 层</button>
+                <button type="button" data-step="2" aria-pressed="false">第 2 层</button>
+                <button type="button" data-step="3" aria-pressed="false">第 3 层</button>
+                <button type="button" data-step="4" aria-pressed="false">收敛吗？</button>
+            </div>
+            <p class="readout" id="suspicion-readout" role="status" aria-live="polite"></p>
+            <p class="source-note">“共同知识”与“极大极小策略”是博弈论中已有的概念（见章末引用）；把它们搬到星际场景、以及“递归不收敛”的结论，是本课根据小说设定做的形式化，不是已有定理。</p>
+        </div>
+<h2 id="sec-3">技术爆炸：为什么弱小者更危险？</h2>
 
         <p>如果说猜疑链是一个慢性的逻辑死锁，那么技术爆炸就是把这个死锁变成致命陷阱的催化剂。</p>
 
@@ -148,7 +225,7 @@ K_A(K_B(K_A(...(¬K_{?}(善意_{?})...)))
 
         <p>技术爆炸的数学模型可以这样理解：</p>
 
-        <pre><code>技术发展模型对比
+        <pre tabindex="0" role="region" aria-label="结构与推导示意" style="overflow-x:auto;max-width:100%"><code>技术发展模型对比
 ==================
 线性增长：T(t) = T₀ + k·t
   （每单位时间增加固定量的技术能力）
@@ -178,7 +255,7 @@ AI时代：？可能进入技术奇点
 
         <p>这就是技术爆炸如何<strong>压缩</strong>了决策时间窗口。如果没有技术爆炸，文明A可以等到确认了B的意图再行动。但有了技术爆炸，"等待"本身就是致命的——因为你等不起。</p>
 
-        <h3>耦合效应：猜疑链+技术爆炸=逻辑死锁</h3>
+        <h2 id="sec-4">耦合效应：猜疑链+技术爆炸=逻辑死锁</h2>
 
         <p>现在我们来看这两个概念的<strong>耦合效应</strong>。单独看，猜疑链是一个认识论困境——我不知道你是什么意图。单独看，技术爆炸是一个动力学现象——弱者可以变强者。但当两者并存时，它们产生了一种全新的性质：<strong>时间压力下的认识论瘫痪</strong>。</p>
 
@@ -192,7 +269,7 @@ AI时代：？可能进入技术奇点
 
         <p>这个耦合效应可以用一个简单的决策树来表达：</p>
 
-        <pre><code>耦合效应：决策树分析
+        <pre tabindex="0" role="region" aria-label="结构与推导示意" style="overflow-x:auto;max-width:100%"><code>耦合效应：决策树分析
 ========================
 发现一个外星文明时 ↓
 ├── 沟通？
@@ -255,13 +332,50 @@ AI时代：？可能进入技术奇点
 
         <p>下一章，我们将从博弈论的视角重新审视整个黑暗森林逻辑。为什么合作不可能？这不是一个道德问题，而是一个数学问题——我们会在囚徒困境、纳什均衡和重复博弈的框架中，严格证明为什么星际文明间的合作在逻辑上不可行。请做好面对数学的准备。</p>
 
+        <section class="refs" aria-labelledby="refs-heading">
+            <h2 id="refs-heading">本章引用与说明</h2>
+            <ul>
+                <li>刘慈欣，《三体 II·黑暗森林》（重庆出版社，2008）。猜疑链与技术爆炸的原始表述出自该书。</li>
+                <li>David Lewis, <em>Convention: A Philosophical Study</em> (Harvard University Press, 1969)。 “共同知识”概念的标准出处。</li>
+                <li>John von Neumann &amp; Oskar Morgenstern, <em>Theory of Games and Economic Behavior</em> (Princeton University Press, 1944)。极大极小（maximin）策略的标准出处。</li>
+                <li>OpenAI (2019), “Better Language Models and Their Implications”。GPT-2 分阶段发布与内部争论的公开说明。</li>
+                <li>1963 年美苏《建立直接通讯线路的备忘录》（“热线”协议）：冷战安全困境得到管理的现实案例。</li>
+            </ul>
+            <p class="source-note">本章的说明：文中提到的 1903 年首次动力飞行、1969 年登月、1995 年互联网商业化均为公开历史事实，但“技术爆炸在地球上已发生”只能支持“可能存在加速增长”，不能推出“一切文明都会发生技术爆炸”——后者是小说设定。</p>
+        </section>
         <div class="footer-nav">
             <a href="03.html">← 上一章</a>
             <a href="index.html">📖 返回目录</a>
             <a href="05.html">下一章 →</a>
         </div>
+    </article>
+    </main>
     </div>
 </div>
 </div>
+<script>
+    (function () {
+        var steps = [
+            { label: '第 0 层：', body: ' “A 不知道 B 是善意还是恶意。”注意这里已经预设了一个东西：A 能分辨“善意/恶意”——而这一点本身未被保证。' },
+            { label: '第 1 层：', body: ' “A 知道 B 也不知道 A 的意图。”于是 B 的任何示好都可能被读作伪装：善意的证明与恶意的伪装在观测上不可区分。' },
+            { label: '第 2 层：', body: ' “A 知道 B 知道 A 不知道 B 的意图。”从这里开始，每一层都不再提供新事实，只是把“对上一层意图的未知”重新写一遍。' },
+            { label: '第 3 层：', body: ' 继续嵌套 K_A(K_B(K_A(…)))。每一步都不能排除对方为恶意，因此步数增加不会降低风险，也不会提高可信度。' },
+            { label: '会收敛吗？', body: ' 不会。在缺乏共享价值、共享语言与第三方仲裁的前提下，这个递归没有终止条件；而地球上的安全困境之所以能被管理，恰恰是因为存在这些最低限度的共享框架（如 1963 年的美苏热线）。' }
+        ];
+        var buttons = Array.prototype.slice.call(document.querySelectorAll('#suspicion-widget button'));
+        var out = document.getElementById('suspicion-readout');
+        function show(i) {
+            var s = steps[i];
+            out.innerHTML = '<span class="stage-label">' + s.label + '</span>' + s.body;
+            buttons.forEach(function (b) {
+                b.setAttribute('aria-pressed', b.getAttribute('data-step') === String(i) ? 'true' : 'false');
+            });
+        }
+        buttons.forEach(function (b) {
+            b.addEventListener('click', function () { show(Number(b.getAttribute('data-step'))); });
+        });
+        show(0);
+    })();
+</script>
 </body>
 </html>
