@@ -217,6 +217,13 @@ figcaption b, figcaption strong { color: #4c1d95; }
 .refs h2 { margin-top: 0; }
 .refs li { line-height: 1.75; }
 
+/* === In-page section TOC === */
+.section-toc { background: #faf8ff; border: 1px solid #e2e0f0; border-radius: 14px; padding: 12px 18px 14px; margin: 18px 0; }
+.section-toc-title { font-weight: 700; color: #4c1d95; margin-bottom: 6px; }
+.section-toc ol { margin-left: 20px; line-height: 1.95; }
+.section-toc a { color: #5b21b6; text-decoration: none; }
+.section-toc a:hover { text-decoration: underline; }
+
 /* === Section anchors scroll offset === */
 section[id], h2[id] { scroll-margin-top: 16px; }
 
