@@ -2,15 +2,16 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第5章 博弈论视角：为什么合作不可能</title>
     <link rel="stylesheet" href="theme.css">
 </head>
 <body>
+<a class="skip-link" href="#content">跳转至正文</a>
 <div class="double-border">
 <div class="container">
-    <div class="sidebar">
-        <h3>🌌 课程目录</h3>
+    <nav class="sidebar" aria-label="课程目录">
+        <p class="sidebar-title">🌌 课程目录</p>
         <ul class="chapter-list">
             <li><a href="01.html">第1章 宇宙社会学的诞生</a></li>
             <li><a href="02.html">第2章 第一公理：生存是文明的第一需要</a></li>
@@ -28,16 +29,32 @@
             <li><a href="14.html">第14章 思想实验的极限：超越黑暗森林的可能性</a></li>
             <li><a href="15.html">第15章 寂静的回响：宇宙社会学的终极命题</a></li>
         </ul>
-    </div>
+    </nav>
     <div class="main-content">
+    <main id="content">
+    <article>
+        <header class="article-header">
+            <h1>第5章 博弈论视角：为什么合作不可能</h1>
+            <p class="dek">本章把“不合作”从直觉变成可检验的推导：囚徒困境的收益排序 <strong>T&gt;R&gt;P&gt;S</strong> 使背叛成为严格占优策略，而重复博弈中支撑合作的折现因子在星际尺度上又几乎塌为零。要注意的是，这两个步骤都带有可质疑的假设，本章会标清哪些是定理、哪些是教学示意。</p>
+        </header>
+        <nav class="section-toc" aria-label="本章小节">
+            <p class="section-toc-title">本章小节</p>
+            <ol>
+                <li><a href="#sec-1">囚徒困境：星际文明博弈的基本模型</a></li>
+                <li><a href="#sec-2">为什么阿克塞尔罗德的"以牙还牙"在宇宙尺度失效</a></li>
+                <li><a href="#sec-3">纳什均衡的冷酷结论：(背叛,背叛)是唯一稳定策略</a></li>
+                <li><a href="#sec-4">从博弈论回看黑暗森林——不是道德选择，是数学必然</a></li>
+            </ol>
+        </nav>
 
-        <h2>第5章 博弈论视角：为什么合作不可能</h2>
+
+        
 
         <p>大家好，我是你们的讲师。到目前为止，我们已经用三章的篇幅搭建了宇宙社会学的基础、公理和关键概念。现在，我们要做一件让这门课程变得真正"硬核"的事情：用博弈论严格证明，为什么星际文明之间的合作在数学上是不可能的。</p>
 
         <p>我知道"在数学上不可能"这个说法非常强硬。在社会科学中，很少有东西是"数学上不可能"的——绝大多数变量都是概率性的、语境依赖的。但星际文明的博弈具有几个独特的特征，使得它成功地超出了合作博弈理论的适用范围。这一章我们会看到：黑暗森林法则不是一个道德判断，而是一个<strong>数学结论</strong>。</p>
 
-        <h3>囚徒困境：星际文明博弈的基本模型</h3>
+        <h2 id="sec-1">囚徒困境：星际文明博弈的基本模型</h2>
 
         <p>让我们从最经典的博弈论模型开始——囚徒困境（Prisoner's Dilemma）。这个模型之所以经典，是因为它在极度简化的条件下捕获了"个体理性导致集体非理性"的深层悖论。</p>
 
@@ -60,7 +77,7 @@
 
         <p>现在关键一步：我们需要给这些结果赋予具体的数值，才能进行严格分析。注意，这些数值是<strong>示意性的</strong>——实际的外星文明可能有完全不同的估值函数。但如我们将看到的，只要数值的相对大小满足特定的不等式，结论就成立。</p>
 
-        <pre><code>星际文明博弈：收益矩阵
+        <pre tabindex="0" role="region" aria-label="结构与推导示意" style="overflow-x:auto;max-width:100%"><code>星际文明博弈：收益矩阵
 =========================
               文明B
           合作       背叛
@@ -93,7 +110,7 @@
             <strong>博弈论的适用边界：</strong>博弈论作为一个数学工具，在分析星际文明时有一个根本性的困境——它要求我们知道对方的收益（payoff）。但在现实中，我们根本不知道外星文明的收益函数是什么样的。把一个外星文明强行放入人类中心的囚徒困境矩阵中，本身就是一种"认知帝国主义"（epistemic imperialism）。所以我们这一章的结论需要加上一个脚注：在<em>已知的</em>博弈论框架下，且<em>假设文明的生命延续偏好和人类相似</em>的情况下，合作不可行。
         </div>
 
-        <h3>为什么阿克塞尔罗德的"以牙还牙"在宇宙尺度失效</h3>
+        <h2 id="sec-2">为什么阿克塞尔罗德的"以牙还牙"在宇宙尺度失效</h2>
 
         <p>1980年，政治科学家罗伯特·阿克塞尔罗德（Robert Axelrod）组织了一场著名的计算机竞赛。他邀请学术界的博弈论专家提交策略，在重复囚徒困境（Iterated Prisoner's Dilemma）中进行锦标赛。获胜的策略是极其简单的"以牙还牙"（Tit-for-Tat）：第一轮合作，之后每一轮重复对方上一轮的举动。</p>
 
@@ -133,7 +150,67 @@
 
         <p>我亲身经历过一个类似困境。2023年我参与了一个多智能体系统项目，我们用深度强化学习训练A和B两个智能体在虚拟环境中互动。环境设定里，A和B之间的通讯有一个最小延迟（模拟星际通讯）。结果非常有趣：延迟越长，合作率越低。在零延迟情况下，合作率可以达到70%；但在10个时间步的延迟下，合作率骤降到5%以下。智能体们"学"到了一个残酷的策略：不等对方回应，直接攻击。不是因为它们"邪恶"，而是因为在这个延迟结构下，等待本身就是致命的。</p>
 
-        <h3>纳什均衡的冷酷结论：(背叛,背叛)是唯一稳定策略</h3>
+        <p class="source-note"><strong>来源说明（待核实）：</strong>上面这段 2023 年的多智能体强化学习演示（70%→5% 之类的“合作率”）是本课为说明机制给出的<strong>教学示意</strong>，未能提供实验设置、代码与原始数据；请把它当成“延迟如何压低合作率”的直觉演示，而不是可引用的实验结果，也不要求记住具体百分比。</p>
+
+        <figure>
+            <svg role="img" aria-labelledby="fig-ch5-title fig-ch5-desc" viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg">
+                <title id="fig-ch5-title">收益矩阵中的占优策略与折现因子的三重折扣</title>
+                <desc id="fig-ch5-desc">左侧是一个两行两列的收益矩阵，每格给出文明A与文明B的收益；无论文明B选合作还是背叛，文明A选背叛的收益都更高，因此背叛是严格占优策略。右侧把星际场景下的折现因子拆成三个相乘的折扣项，并给出一个乘积很小的示意值。</desc>
+                <g font-family="system-ui,'PingFang SC','Microsoft YaHei',sans-serif">
+                    <rect x="170" y="96" width="110" height="44" rx="10" fill="#e6f4f4" stroke="#147f80" stroke-width="1.8"/>
+                    <text x="225" y="123" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0f5f60">B：合作</text>
+                    <rect x="280" y="96" width="110" height="44" rx="10" fill="#e6f4f4" stroke="#147f80" stroke-width="1.8"/>
+                    <text x="335" y="123" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0f5f60">B：背叛</text>
+
+                    <rect x="60" y="140" width="110" height="70" rx="10" fill="#f4f0fb" stroke="#7461ba" stroke-width="1.8"/>
+                    <text x="115" y="180" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4b3d85">A：合作</text>
+                    <rect x="60" y="210" width="110" height="70" rx="10" fill="#fdeee8" stroke="#d06d4d" stroke-width="1.8"/>
+                    <text x="115" y="250" text-anchor="middle" font-size="12.5" font-weight="700" fill="#a24c30">A：背叛</text>
+
+                    <rect x="170" y="140" width="110" height="70" rx="10" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.4"/>
+                    <text x="225" y="182" text-anchor="middle" font-size="15" font-weight="700" fill="#203035">3 , 3</text>
+                    <rect x="280" y="140" width="110" height="70" rx="10" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.4"/>
+                    <text x="335" y="182" text-anchor="middle" font-size="15" font-weight="700" fill="#203035">1 , 4</text>
+                    <rect x="170" y="210" width="110" height="70" rx="10" fill="#fff5f0" stroke="#d06d4d" stroke-width="2"/>
+                    <text x="225" y="252" text-anchor="middle" font-size="15" font-weight="700" fill="#a24c30">4 , 1</text>
+                    <rect x="280" y="210" width="110" height="70" rx="10" fill="#fff5f0" stroke="#d06d4d" stroke-width="2"/>
+                    <text x="335" y="252" text-anchor="middle" font-size="15" font-weight="700" fill="#a24c30">2 , 2</text>
+                    <text x="60" y="306" font-size="12" fill="#53676d">每格为（A 的收益 , B 的收益）</text>
+                    <text x="60" y="336" font-size="12.5" fill="#b91c1c">橙框行＝背叛：无论 B 选哪一列，A 的收益都更高</text>
+                    <text x="60" y="358" font-size="12.5" fill="#916c22">收益值 1–4 为教学示意，只用于固定 T&gt;R&gt;P&gt;S 的排序</text>
+
+                    <text x="470" y="96" font-size="14" font-weight="700" fill="#4b3d85">折现因子 δ 的三重折扣</text>
+                    <text x="478" y="136" font-size="12.5" fill="#203035">δ 潜伏期 → 光速与星际距离</text>
+                    <rect x="478" y="146" width="150" height="14" rx="4" fill="#9fd6d7"/>
+                    <text x="640" y="158" font-size="12" fill="#53676d">示意 ~0.5</text>
+                    <text x="478" y="196" font-size="12.5" fill="#203035">δ 技术爆炸 → 追赶速度极快</text>
+                    <rect x="478" y="206" width="30" height="14" rx="4" fill="#f0c1ae"/>
+                    <text x="520" y="218" font-size="12" fill="#53676d">示意 ~0.1</text>
+                    <text x="478" y="256" font-size="12.5" fill="#203035">δ 猜疑链 → 意图无法核对</text>
+                    <rect x="478" y="266" width="30" height="14" rx="4" fill="#f0c1ae"/>
+                    <text x="520" y="278" font-size="12" fill="#53676d">示意 ~0.1</text>
+                    <rect x="478" y="300" width="340" height="62" rx="12" fill="#fbf1e2" stroke="#916c22" stroke-width="2"/>
+                    <text x="496" y="326" font-size="13" font-weight="700" fill="#71520f">δ ≈ 0.5 × 0.1 × 0.1 ≈ 0.005</text>
+                    <text x="496" y="348" font-size="12.5" fill="#203035">δ 足够小时，重复博弈也无法产生合作</text>
+                    <text x="478" y="396" font-size="12" fill="#916c22">以上取值均为教学示意，不代表任何实测或已发表的计算。</text>
+
+                    <text x="60" y="440" font-size="12.5" fill="#53676d">结论：在前两列的每一列内，下面一行都严格优于上面一行 ⇒ （背叛，背叛）是纳什均衡。</text>
+                </g>
+            </svg>
+            <figcaption>左侧是章节里那个 2×2 矩阵：<strong>严格占优</strong>的含义是“无论对手选哪一列，背叛那一行的收益都更高”，所以不需要知道对方的偏好就能排除合作。右侧把 δ 拆成三项相乘——三项都可能很小，但具体数值是<strong>教学示意</strong>，只用来展示“乘积会很小”这个方向性结论，不能当作计算或实验证据。</figcaption>
+        </figure>
+
+        <div class="widget" id="pd-widget">
+            <h3>交互：对方不同选择下，A 的最优反应</h3>
+            <div class="controls" role="group" aria-label="假设对手的选择">
+                <button type="button" data-step="0" aria-pressed="true">假设 B 合作</button>
+                <button type="button" data-step="1" aria-pressed="false">假设 B 背叛</button>
+                <button type="button" data-step="2" aria-pressed="false">B 的类型未知</button>
+            </div>
+            <p class="readout" id="pd-readout" role="status" aria-live="polite"></p>
+            <p class="source-note">前两个按钮展示的是严格占优策略的定义（纯逻辑，不依赖任何数据）；第三个按钮展示的是极大极小准则（maximin），它只在“无法赋予先验概率”时才是标准做法——而“无法赋予先验概率”本身就是一个可被质疑的前提。</p>
+        </div>
+<h2 id="sec-3">纳什均衡的冷酷结论：(背叛,背叛)是唯一稳定策略</h2>
 
         <p>现在让我们回到严格的博弈论分析。在单次囚徒困境中，纳什均衡（Nash Equilibrium）是（背叛,背叛）。这意味着：给定对方选背叛，我没有动机单方面改变自己的策略——如果我改选合作，我的收益会从2降到1，这对我更不利。</p>
 
@@ -145,7 +222,7 @@
 
         <p><strong>第二，折现因子的分解。</strong>在博弈论中，折现因子δ（0<δ<1）表示"下一轮收益相对于本轮收益的折扣"。对于星际文明，δ由以下因素决定：</p>
 
-        <pre><code>星际文明的折现因子分解
+        <pre tabindex="0" role="region" aria-label="结构与推导示意" style="overflow-x:auto;max-width:100%"><code>星际文明的折现因子分解
 ===========================
 δ = δ_潜伏期 × δ_技术爆炸 × δ_猜疑链
 
@@ -166,13 +243,15 @@
 当δ如此低时，即使百万次重复博弈也无法产生合作。
 </code></pre>
 
+        <p class="source-note"><strong>数据说明：</strong>上面 δ 的三个取值及其乘积（≈0.005）是本章的<strong>教学示意</strong>，用于说明“多项折扣叠乘后会变得很小”这一方向，并无实测或仿真来源；绕得越远、追得越快、意图越难核对，乘积就越小。真正有来源的是“折现因子足够大时合作可以成为均衡”这一结论，它来自民间定理（见章末引用）。</p>
+
         <p>这个分析给出了一个令人窒息的结论：<strong>不是文明不够善良所以不合作，而是数学结构使得合作在逻辑上不可能。</strong></p>
 
         <div class="tip">
             <strong>一个微妙的技术细节：</strong>有人会反驳说："但我们可以写一个智能合约啊！让双方都把自己的核心技术源码交给某个自动执行的验证程序，这样就可以建立信任了。"这个反驳在技术上有一个致命漏洞：你怎么确保你收到的代码就是对方<em>实际运行</em>的代码？星际文明之间，没有任何第三方可以验证一个文明宣称的"自我约束"是否真实。我们可以把代码发给对方，但对方无法确认我们实际运行的版本就是发出去的那个版本。这就是所谓的"验证鸿沟"（verification gap）——在缺乏物理访问权限的情况下，任何承诺都是不可验证的。
         </div>
 
-        <h3>从博弈论回看黑暗森林——不是道德选择，是数学必然</h3>
+        <h2 id="sec-4">从博弈论回看黑暗森林——不是道德选择，是数学必然</h2>
 
         <p>现在让我们把这一章的所有线索串起来，重新审视黑暗森林法则。如果我们把之前三章的结论叠加在一起：</p>
 
@@ -186,7 +265,7 @@
 
         <p>从这五个前提推导出的结论只有一个：</p>
 
-        <pre><code>黑暗森林法则：博弈论推导的最终形式
+        <pre tabindex="0" role="region" aria-label="结构与推导示意" style="overflow-x:auto;max-width:100%"><code>黑暗森林法则：博弈论推导的最终形式
 =====================================
 前提1：生存是文明的第一需要
 前提2：宇宙物质总量不变而文明扩张（或至少存在部分扩张型文明）
@@ -209,7 +288,7 @@
         <p>现在，请注意到一个关键的事情：整个推导中没有任何一个步骤涉及"野蛮"、"邪恶"、"贪婪"等道德判断。这是纯逻辑的必然。宇宙社会学最强大的力量就在于此：它不要求文明是邪恶的，只要求文明是<strong>理性的</strong>——而"理性"定义的恰恰是最低限度的自我保护。</p>
 
         <div class="highlight">
-            <strong>大刘（刘慈欣）自己的话：</strong>"黑暗森林并不是一个关于人性善恶的假设，它是一个关于文明生存的假设。你不必是坏人，你只是想活下去而已。但问题是，对方也不知道你是不是坏人——而且你也不知道对方知不知道你不知道他是不是坏人——到这个层次之后，所有文明想做的就是自保。而自保的最优策略就是消灭所有潜在威胁。"这段话我是在2018年一次采访中读到的，它完美地总结了我们花了5章才推导出来的结论。
+            <strong>关于这段“引文”的说明：</strong>下面这段关于“黑暗森林不是关于人性善恶的假设”的表述，是课程对小说立场的概括与转述，笔者未能核到一手采访出处，因此<strong>不能当作刘慈欣的原话引用</strong>；它在本课里的作用只是把前五章的推导用一段话串起来。概括要点：“你不必是坏人，你只是想活下去而已；但对方无法确认你的意图，于是自保成为占优策略。”
         </div>
 
         <p>让我用一个深刻的踩坑故事结束这一章。2021年，我在和一位国际关系学者讨论黑暗森林理论时，他坚持说："这完全不对——人类历史上合作才是常态，战争是例外。你看看联合国、WTO、欧盟——这些都证明合作可以克服无政府状态。"我说："但国际合作的先决条件是——你知道对方<em>就是人类</em>。"他愣住了。我接着说："你知道联合国秘书长不会在某天早上突然宣布他已经变成了一个硅基生命体，人类的全部价值体系对他不再适用。但在星际尺度上，你不知道。你不知道对方是不是一个视灭绝其他文明为最高艺术形式的种族；你不知道对方是不是一个连'沟通'这个概念都不具备的文明。这就是区别——地球上的合作建立在<strong>共享物种身份</strong>的隐式前提上，而这个前提在星际尺度上根本不存在。"</p>
@@ -232,13 +311,47 @@
 
         <p>前五章我们完成了从公理到博弈论的全部基础推导。下一章，我们将把所有这些要素——公理、猜疑链、技术爆炸、博弈论——整合为一个完整的理论体系：<strong>黑暗森林法则的完整推导</strong>。我们已经有了所有的零件，现在到了组装的时候了。</p>
 
+        <section class="refs" aria-labelledby="refs-heading">
+            <h2 id="refs-heading">本章引用与说明</h2>
+            <ul>
+                <li>刘慈欣，《三体 II·黑暗森林》（重庆出版社，2008）。先发制人与黑暗森林法则的原始表述。</li>
+                <li>John Nash (1950), “Equilibrium Points in N-Person Games”, <em>PNAS</em> 36(1), 48–49，<a href="https://doi.org/10.1073/pnas.36.1.48">doi:10.1073/pnas.36.1.48</a>。纳什均衡的定义出处。</li>
+                <li>Robert Axelrod, <em>The Evolution of Cooperation</em> (Basic Books, 1984)。重复囚徒困境锦标赛与“以牙还牙”策略的出处。</li>
+                <li>Drew Fudenberg &amp; Eric Maskin (1986), “The Folk Theorem in Repeated Games with Discounting or with Incomplete Information”, <em>Econometrica</em> 54(3), 533–554。<a href="https://doi.org/10.2307/1911307">doi:10.2307/1911307</a>。“折现因子足够大时合作可成为均衡”的出处。</li>
+            </ul>
+            <p class="source-note">本章纪律：收益值 4/3/2/1、折现因子 0.5/0.1/0.1 与“合作率 70%/5%”均为<strong>教学示意</strong>，已在上文相应位置注明；它们只用于展示策略排序与乘积方向，不作为数据引用。囚徒困境的 T&gt;R&gt;P&gt;S 结构与纳什均衡的定义是标准结论。</p>
+        </section>
         <div class="footer-nav">
             <a href="04.html">← 上一章</a>
             <a href="index.html">📖 返回目录</a>
             <a href="06.html">下一章 →</a>
         </div>
+    </article>
+    </main>
     </div>
 </div>
 </div>
+<script>
+    (function () {
+        var steps = [
+            { label: '假设 B 合作：', body: ' A 合作的收益是 3，背叛是 4。背叛更优。注意这一步不需要知道 B 会不会合作，只需要看矩阵的一列。' },
+            { label: '假设 B 背叛：', body: ' A 合作的收益是 1，背叛是 2。背叛仍然更优。两列都选背叛，才叫“严格占优策略”——而不是“看情况”。' },
+            { label: 'B 的类型未知：', body: ' 如果连收益函数都无法赋值（不知道对方从合作中获利还是从征服中获利），理性决策退回到极大极小准则：先写下最坏结果，再选择让最坏结果尽量不坏的行动。在矩阵里，那仍然是背叛——这才是“数学结论”的准确含义：它依赖“无法赋先验概率”这个前提。' }
+        ];
+        var buttons = Array.prototype.slice.call(document.querySelectorAll('#pd-widget button'));
+        var out = document.getElementById('pd-readout');
+        function show(i) {
+            var s = steps[i];
+            out.innerHTML = '<span class="stage-label">' + s.label + '</span>' + s.body;
+            buttons.forEach(function (b) {
+                b.setAttribute('aria-pressed', b.getAttribute('data-step') === String(i) ? 'true' : 'false');
+            });
+        }
+        buttons.forEach(function (b) {
+            b.addEventListener('click', function () { show(Number(b.getAttribute('data-step'))); });
+        });
+        show(0);
+    })();
+</script>
 </body>
 </html>
