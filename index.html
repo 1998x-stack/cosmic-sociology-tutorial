@@ -2,369 +2,322 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-    <title>课程目录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="宇宙社会学 · 从公理到黑暗森林：15 章全中文思想实验课程目录，从两条公理出发逐步推导黑暗森林法则并做批判性检验。">
+    <title>课程目录 · 宇宙社会学</title>
     <link rel="stylesheet" href="theme.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        :root {
+            --paper: #fffdf9;
+            --ink: #203035;
+            --subtle: #53676d;
+            --accent: #147f80;
+            --transform: #d06d4d;
+            --structure: #7461ba;
+            --annotation: #916c22;
+        }
         body {
-            background: linear-gradient(145deg, #f9fcf5 0%, #e8f3e8 100%);
-            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', system-ui, -apple-system, sans-serif;
-            padding: 2rem 1.5rem 1rem;
+            background: linear-gradient(135deg, #f5f3ff 0%, #e8f5f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            color: var(--ink);
+            padding: 20px;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
-
-        .container {
-            display: block;
-            max-width: 1400px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.70);
-            backdrop-filter: blur(2px);
-            border-radius: 48px 48px 32px 32px;
-            padding: 2rem 2rem 1.5rem;
-            box-shadow: 0 20px 40px rgba(90, 140, 100, 0.15), 0 8px 20px rgba(0, 30, 20, 0.08);
-            border: 1px solid rgba(255, 245, 200, 0.5);
+        .skip-link {
+            position: absolute; left: -999px; top: 0; z-index: 50;
+            background: #4c1d95; color: #fff; padding: 10px 18px; border-radius: 0 0 12px 0;
         }
-
-        .header {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            border-bottom: 4px solid #f7d44a;
-            padding-bottom: 0.75rem;
+        .skip-link:focus { left: 0; }
+        .double-border {
+            max-width: 1400px; margin: 0 auto; background: #ffffff;
+            border: 2px solid #8b5cf6; border-radius: 24px;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2), inset 0 1px 0 0 #f5f3ff;
+            overflow: hidden;
         }
-
-        .header h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #2b7a4b, #3f9e6b);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 8px rgba(60, 140, 80, 0.12);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        .container { display: grid; grid-template-columns: 240px 1fr; gap: 0; }
+        .sidebar { background: #faf8ff; border-right: 2px solid #c4b5fd; padding: 24px 16px; }
+        .sidebar-title { font-size: 1.15rem; color: #6d28d9; border-left: 5px solid #8b5cf6; padding-left: 12px; margin-bottom: 18px; font-weight: 700; }
+        .sidebar ul { list-style: none; }
+        .sidebar li { margin-bottom: 6px; }
+        .sidebar a { display: block; padding: 7px 12px; text-decoration: none; color: #334155; border-radius: 12px; font-weight: 500; font-size: 0.9rem; }
+        .sidebar a:hover, .sidebar a:focus-visible { background: #ede9fe; }
+        .main-content { padding: 30px 35px 40px; background: white; max-width: none; }
+        .article-header h1 {
+            font-size: clamp(1.6rem, 4vw, 2.3rem); color: #4c1d95; line-height: 1.3;
+            letter-spacing: -0.01em; border-left: 6px solid #8b5cf6; padding-left: 15px;
         }
-
-        .header h1 .emoji {
-            font-size: 2.2rem;
-            filter: drop-shadow(0 2px 4px rgba(255, 200, 50, 0.3));
+        .article-header .dek { color: var(--subtle); margin-top: 0.6rem; margin-left: 21px; line-height: 1.8; }
+        h2 { color: #4c1d95; border-left: 6px solid #8b5cf6; padding-left: 15px; margin: 34px 0 14px; font-size: 1.45rem; }
+        p { line-height: 1.85; margin: 10px 0; }
+        .topics-note { color: var(--subtle); font-size: 0.95rem; }
+        figure { margin: 22px 0; }
+        figure svg { width: 100%; height: auto; display: block; background: var(--paper); border: 1px solid #e2e0f0; border-radius: 16px; }
+        figcaption { font-size: 0.92rem; color: var(--subtle); margin-top: 8px; line-height: 1.7; }
+        .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0.4rem; }
+        .filters button {
+            font: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+            padding: 0.45rem 1.1rem; border-radius: 40px; border: 1px solid #c4b5fd;
+            background: #fff; color: #4c1d95; min-height: 40px;
         }
-
-        .header .sub {
-            font-size: 1rem;
-            background: #fef7e0;
-            padding: 0.3rem 1.2rem;
-            border-radius: 40px;
-            color: #3f6b4a;
-            font-weight: 600;
-            border: 1px solid #f3d98a;
-            box-shadow: 0 2px 6px rgba(200, 160, 50, 0.1);
-            white-space: nowrap;
-        }
-
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.2rem;
-            margin: 1.8rem 0 1.2rem;
-        }
-
+        .filters button[aria-pressed="true"] { background: #7c3aed; color: #fff; border-color: #7c3aed; }
+        .filters button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+        .filter-status { color: var(--subtle); font-size: 0.9rem; margin-bottom: 0.6rem; }
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; margin: 1rem 0; }
         .card {
-            background: #ffffff;
-            border-radius: 28px;
-            padding: 1rem 1.2rem 1rem 1.2rem;
-            box-shadow: 0 6px 14px rgba(70, 120, 80, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
-            transition: all 0.2s ease;
-            border: 1px solid rgba(210, 230, 200, 0.5);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            backdrop-filter: blur(2px);
+            background: #ffffff; border-radius: 20px; padding: 1rem 1.2rem;
+            box-shadow: 0 6px 14px rgba(70, 120, 80, 0.08); border: 1px solid rgba(210, 230, 200, 0.5);
+            display: flex; flex-direction: column;
         }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 24px rgba(70, 140, 90, 0.15), 0 4px 12px rgba(40, 100, 60, 0.05);
-            border-color: #b8d9b0;
-            background: #fefefc;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: baseline;
-            gap: 0.4rem;
-            margin-bottom: 0.4rem;
-            flex-wrap: wrap;
-        }
-
+        .card-header { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
         .chapter-num {
-            font-size: 1.1rem;
-            font-weight: 700;
-            background: #f5d142;
-            color: #2a5a3a;
-            padding: 0 0.6rem;
-            border-radius: 40px;
-            line-height: 1.6;
-            display: inline-block;
-            box-shadow: inset 0 -2px 0 #dbb42c;
-            letter-spacing: 0.3px;
-            min-width: 2.2rem;
-            text-align: center;
+            font-size: 1.05rem; font-weight: 700; background: #f5d142; color: #2a5a3a;
+            padding: 0 0.6rem; border-radius: 40px; line-height: 1.6; min-width: 2.2rem; text-align: center;
         }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 650;
-            color: #1f4d33;
-            letter-spacing: -0.3px;
-            line-height: 1.3;
-            flex: 1;
-        }
-
-        .topic-list {
-            list-style: none;
-            margin-top: 0.3rem;
-            padding-left: 0.2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.2rem 0.6rem;
-        }
-
-        .topic-list li {
-            font-size: 0.8rem;
-            color: #2d543a;
-            background: #f1f9ee;
-            padding: 0.1rem 0.7rem 0.2rem 1.2rem;
-            border-radius: 30px;
-            line-height: 1.6;
-            position: relative;
-            border: 1px solid #dcebd4;
-            box-shadow: inset 0 1px 2px white;
-        }
-
-        .topic-list li::before {
-            content: "⚡";
-            position: absolute;
-            left: 4px;
-            top: 0px;
-            font-size: 0.7rem;
-            color: #e5b13b;
-        }
-
-        .card-footer {
-            margin-top: 0.6rem;
-            display: flex;
-            justify-content: flex-end;
-            border-top: 1px dashed #d4e8d0;
-            padding-top: 0.5rem;
-        }
-
+        .card-title { font-size: 1.12rem; font-weight: 650; color: #1f4d33; line-height: 1.35; flex: 1; }
+        .topic-list { list-style: none; margin-top: 0.3rem; display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; }
+        .topic-list li { font-size: 0.78rem; color: #2d543a; background: #f1f9ee; padding: 0.1rem 0.7rem 0.2rem 1.1rem; border-radius: 30px; border: 1px solid #dcebd4; position: relative; }
+        .topic-list li::before { content: "⚡"; position: absolute; left: 4px; top: 0; font-size: 0.68rem; color: #e5b13b; }
+        .card-footer { margin-top: 0.7rem; display: flex; justify-content: flex-end; border-top: 1px dashed #d4e8d0; padding-top: 0.6rem; }
         .card-footer a {
-            background: #b7d8b0;
-            color: #1f452b;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 0.2rem 1.2rem;
-            border-radius: 40px;
-            transition: 0.15s;
-            border: 1px solid #8fb88a;
-            box-shadow: 0 2px 4px rgba(60, 120, 60, 0.1);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            background: #b7d8b0; color: #1f452b; text-decoration: none; font-weight: 600; font-size: 0.85rem;
+            padding: 0.35rem 1.2rem; border-radius: 40px; border: 1px solid #8fb88a; min-height: 38px;
+            display: inline-flex; align-items: center; gap: 6px;
         }
-
-        .card-footer a::after {
-            content: "→";
-            font-size: 1rem;
-            transition: transform 0.1s;
+        .card-footer a:hover { background: #f7d44a; border-color: #dbb42c; }
+        .card-footer a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+        .card[hidden] { display: none; }
+        footer.page-footer { margin-top: 2.5rem; font-size: 0.95rem; color: var(--subtle); border-top: 2px solid #c4b5fd; padding-top: 1rem; }
+        .callout { background: #fef9c3; border: 1px solid #facc15; border-radius: 16px; padding: 12px 18px; margin: 15px 0; line-height: 1.75; }
+        .callout strong { color: #713f12; }
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { border-right: none; border-bottom: 2px solid #c4b5fd; }
+            .main-content { padding: 20px 18px 30px; }
         }
-
-        .card-footer a:hover {
-            background: #f7d44a;
-            border-color: #dbb42c;
-            color: #1f3d28;
-            box-shadow: 0 4px 8px rgba(200, 160, 40, 0.2);
-            transform: scale(1.02);
-        }
-
-        .card-footer a:active {
-            transform: scale(0.96);
-        }
-
-        .footer {
-            margin-top: 2.5rem;
-            text-align: center;
-            font-size: 1rem;
-            color: #3b6b47;
-            background: #f2fcee;
-            padding: 0.8rem 2rem;
-            border-radius: 60px;
-            display: inline-block;
-            border: 1px solid #c6dfbe;
-            box-shadow: 0 2px 8px rgba(80, 130, 70, 0.08);
-            font-weight: 500;
-            letter-spacing: 0.3px;
-            backdrop-filter: blur(2px);
-        }
-
-        .footer span {
-            background: #f9eec1;
-            padding: 0.1rem 0.8rem;
-            border-radius: 30px;
-            margin: 0 4px;
-        }
-
-        @media (max-width: 640px) {
-            body { padding: 1rem 0.8rem; }
-            .container { padding: 1.2rem 1rem; border-radius: 32px; }
-            .header h1 { font-size: 1.8rem; }
-            .header .sub { font-size: 0.75rem; padding: 0.2rem 0.8rem; }
-            .course-grid { grid-template-columns: 1fr; gap: 1rem; }
-            .card-title { font-size: 1.05rem; }
-            .topic-list li { font-size: 0.7rem; }
-        }
-
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .course-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        .container::before {
-            content: "";
-            display: block;
-            height: 6px;
-            width: 120px;
-            background: linear-gradient(90deg, #f7d44a, #7fc47c, #4aa0b0, #f7b07a);
-            border-radius: 10px;
-            margin-bottom: 0.2rem;
-        }
-
-        .card:nth-child(6n+1) .chapter-num { background: #f7b07a; color: #3d2e1a; }
-        .card:nth-child(6n+2) .chapter-num { background: #a7d4a0; color: #1f452b; }
-        .card:nth-child(6n+3) .chapter-num { background: #f5d44a; color: #2f4d2a; }
-        .card:nth-child(6n+4) .chapter-num { background: #b3d9e8; color: #1a3f4a; }
-        .card:nth-child(6n+5) .chapter-num { background: #f7c6c6; color: #5a2e2e; }
-        .card:nth-child(6n) .chapter-num { background: #c4b3e0; color: #2f2a4a; }
-
-        .state-msg {
-            text-align: center;
-            padding: 3rem;
-            color: #5f7f66;
-            font-size: 1.1rem;
-        }
-        .state-msg.error {
-            color: #b91c1c;
-            background: #fef2f2;
-            border-radius: 20px;
-            margin: 1rem 0;
+        @media (max-width: 480px) { body { padding: 10px; } .course-grid { grid-template-columns: 1fr; } }
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+        @media print {
+            body { background: #fff; padding: 0; }
+            .sidebar, .filters, .skip-link { display: none; }
+            .double-border { border: none; box-shadow: none; }
+            .card { break-inside: avoid; }
         }
     </style>
 </head>
 <body>
+<a class="skip-link" href="#content">跳转至正文</a>
+<div class="double-border">
 <div class="container">
-    <div class="header">
-        <h1><span class="emoji"></span><span class="title-text"></span></h1>
-        <div class="sub"></div>
-    </div>
+    <nav class="sidebar" aria-label="页面目录">
+        <p class="sidebar-title">🌌 课程目录</p>
+        <ul>
+            <li><a href="#map">课程地图</a></li>
+            <li><a href="#chapters">15 章目录</a></li>
+            <li><a href="#howto">如何使用本课程</a></li>
+        </ul>
+    </nav>
+    <main id="content" class="main-content">
+    <article>
+        <header class="article-header">
+            <h1>宇宙社会学 · 从公理到黑暗森林</h1>
+            <p class="dek">15 章全中文思想实验课程。它先按小说的内部逻辑把两条公理推到底，得到黑暗森林法则；再逐条检验这个推导的漏洞与现实世界（SETI/METI、大过滤器、伦理）对它的回应。读的时候请始终区分三类陈述：<strong>小说内部的设定</strong>、<strong>可独立检验的现实理论</strong>、<strong>本课程的批判意见</strong>。</p>
+        </header>
 
-    <div id="cardContainer" class="course-grid"></div>
+        <section id="map" aria-labelledby="map-heading">
+            <h2 id="map-heading">课程地图：一条逻辑链与一次反驳</h2>
+            <p>整门课沿一条链条推进：两条公理 → 猜疑链 → 技术爆炸 → 黑暗森林法则，然后在后半程掉头做批判与比较。下图标出每一步对应的章节，以及链条在哪一步最容易断裂。</p>
+            <figure>
+                <svg role="img" aria-labelledby="fig-map-title fig-map-desc" viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg">
+                    <title id="fig-map-title">宇宙社会学课程的逻辑链与对应章节</title>
+                    <desc id="fig-map-desc">五个阶段从左到右依次排列：两条公理（第1-3章）、猜疑链（第4章）、技术爆炸（第4章）、黑暗森林法则（第5-9章）、批判与出路（第10-15章）。前四个阶段由实线箭头连接，表示小说内部的演绎；第五阶段用虚线连接，表示本课程对推导的检验，并在其下方标注三个可攻击点。</desc>
+                    <defs>
+                        <marker id="mapArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                            <path d="M0,0 L8,3 L0,6 z" fill="#147f80"/>
+                        </marker>
+                        <marker id="mapArrowDash" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                            <path d="M0,0 L8,3 L0,6 z" fill="#7461ba"/>
+                        </marker>
+                    </defs>
+                    <text x="30" y="42" font-size="15" font-weight="700" fill="#4c1d95" font-family="system-ui,'PingFang SC','Microsoft YaHei',sans-serif">小说内部的演绎</text>
+                    <line x1="30" y1="56" x2="148" y2="56" stroke="#147f80" stroke-width="2.5"/>
+                    <text x="540" y="42" font-size="15" font-weight="700" fill="#4c1d95" font-family="system-ui,'PingFang SC','Microsoft YaHei',sans-serif">本课程的检验</text>
+                    <line x1="540" y1="56" x2="658" y2="56" stroke="#7461ba" stroke-width="2.5" stroke-dasharray="7 5"/>
 
-    <div style="text-align:center;">
-        <div class="footer"></div>
-    </div>
+                    <g font-family="system-ui,'PingFang SC','Microsoft YaHei',sans-serif">
+                        <rect x="30" y="110" width="148" height="92" rx="14" fill="#e6f4f4" stroke="#147f80" stroke-width="2"/>
+                        <text x="104" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#0f5f60">两条公理</text>
+                        <text x="104" y="163" text-anchor="middle" font-size="12.5" fill="#203035">生存优先</text>
+                        <text x="104" y="182" text-anchor="middle" font-size="12.5" fill="#203035">总量守恒</text>
+                        <text x="104" y="224" text-anchor="middle" font-size="12" fill="#6d28d9">第 1–3 章</text>
+
+                        <rect x="202" y="110" width="148" height="92" rx="14" fill="#eef0fa" stroke="#7461ba" stroke-width="2"/>
+                        <text x="276" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#4b3d85">猜疑链</text>
+                        <text x="276" y="163" text-anchor="middle" font-size="12.5" fill="#203035">意图无法确认</text>
+                        <text x="276" y="182" text-anchor="middle" font-size="12.5" fill="#203035">无限递归</text>
+                        <text x="276" y="224" text-anchor="middle" font-size="12" fill="#6d28d9">第 4 章</text>
+
+                        <rect x="374" y="110" width="148" height="92" rx="14" fill="#fdeee8" stroke="#d06d4d" stroke-width="2"/>
+                        <text x="448" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#a24c30">技术爆炸</text>
+                        <text x="448" y="163" text-anchor="middle" font-size="12.5" fill="#203035">非线性跃迁</text>
+                        <text x="448" y="182" text-anchor="middle" font-size="12.5" fill="#203035">力量对比失效</text>
+                        <text x="448" y="224" text-anchor="middle" font-size="12" fill="#6d28d9">第 4 章</text>
+
+                        <rect x="546" y="110" width="148" height="92" rx="14" fill="#fbf1e2" stroke="#916c22" stroke-width="2"/>
+                        <text x="620" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#71520f">黑暗森林法则</text>
+                        <text x="620" y="163" text-anchor="middle" font-size="12.5" fill="#203035">暴露即死亡</text>
+                        <text x="620" y="182" text-anchor="middle" font-size="12.5" fill="#203035">先发制人</text>
+                        <text x="620" y="224" text-anchor="middle" font-size="12" fill="#6d28d9">第 5–9 章</text>
+
+                        <rect x="718" y="110" width="148" height="92" rx="14" fill="#eef7ee" stroke="#2f8f5b" stroke-width="2"/>
+                        <text x="792" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#1f5f3c">批判与出路</text>
+                        <text x="792" y="163" text-anchor="middle" font-size="12.5" fill="#203035">威慑 / 反驳</text>
+                        <text x="792" y="182" text-anchor="middle" font-size="12.5" fill="#203035">共生与选择</text>
+                        <text x="792" y="224" text-anchor="middle" font-size="12" fill="#6d28d9">第 10–15 章</text>
+
+                        <line x1="178" y1="156" x2="198" y2="156" stroke="#147f80" stroke-width="2.5" marker-end="url(#mapArrow)"/>
+                        <line x1="350" y1="156" x2="370" y2="156" stroke="#147f80" stroke-width="2.5" marker-end="url(#mapArrow)"/>
+                        <line x1="522" y1="156" x2="542" y2="156" stroke="#147f80" stroke-width="2.5" marker-end="url(#mapArrow)"/>
+                        <line x1="694" y1="156" x2="714" y2="156" stroke="#7461ba" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#mapArrowDash)"/>
+
+                        <text x="30" y="268" font-size="12.5" fill="#53676d">最脆弱的环节：公理二的“总量守恒”假设、猜疑链的“无法通讯”前提、以及打击成本是否足够低。</text>
+                    </g>
+                </svg>
+                <figcaption>逻辑链与章节对应关系。实线表示小说内的演绎步骤，虚线表示课程在后半程对推导本身做的检验；底部列出三个最常被反驳的前提（第 12 章逐一展开）。</figcaption>
+            </figure>
+        </section>
+
+        <section id="chapters" aria-labelledby="chapters-heading">
+            <h2 id="chapters-heading">15 章目录</h2>
+            <p class="topics-note">可按主题筛选。每章正文都包含一张解释核心机制的原创示意图与至少一处可交互演示。</p>
+            <div class="filters" role="group" aria-label="按主题筛选章节">
+                <button type="button" data-filter="all" aria-pressed="true">全部（15）</button>
+                <button type="button" data-filter="axiom" aria-pressed="false">公理与推导（1–6）</button>
+                <button type="button" data-filter="forest" aria-pressed="false">黑暗森林与威慑（7–9）</button>
+                <button type="button" data-filter="critique" aria-pressed="false">批判与现实（10–13）</button>
+                <button type="button" data-filter="beyond" aria-pressed="false">超越与出路（14–15）</button>
+            </div>
+            <p class="filter-status" id="filterStatus" role="status">显示全部 15 章。</p>
+            <div class="course-grid" id="cardGrid">
+                <div class="card" data-cluster="axiom">
+                    <div class="card-header"><span class="chapter-num">01</span><span class="card-title">宇宙社会学的诞生</span></div>
+                    <ul class="topic-list"><li>叶文洁与罗辑</li><li>学科定义</li><li>思想脉络</li></ul>
+                    <div class="card-footer"><a href="01.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="axiom">
+                    <div class="card-header"><span class="chapter-num">02</span><span class="card-title">第一公理：生存是文明的第一需要</span></div>
+                    <ul class="topic-list"><li>公理的力量与局限</li><li>文明的定义困境</li><li>生存优先的张力</li></ul>
+                    <div class="card-footer"><a href="02.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="axiom">
+                    <div class="card-header"><span class="chapter-num">03</span><span class="card-title">第二公理：扩张与守恒的零和宇宙</span></div>
+                    <ul class="topic-list"><li>物质守恒</li><li>扩张本能</li><li>零和博弈</li></ul>
+                    <div class="card-footer"><a href="03.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="axiom">
+                    <div class="card-header"><span class="chapter-num">04</span><span class="card-title">猜疑链与技术爆炸</span></div>
+                    <ul class="topic-list"><li>猜疑链递归</li><li>非线性跃迁</li><li>致命耦合</li></ul>
+                    <div class="card-footer"><a href="04.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="axiom">
+                    <div class="card-header"><span class="chapter-num">05</span><span class="card-title">博弈论视角：为什么合作不可能</span></div>
+                    <ul class="topic-list"><li>囚徒困境</li><li>纳什均衡</li><li>重复博弈的局限</li></ul>
+                    <div class="card-footer"><a href="05.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="axiom">
+                    <div class="card-header"><span class="chapter-num">06</span><span class="card-title">黑暗森林法则：完整推导</span></div>
+                    <ul class="topic-list"><li>演绎链条</li><li>法则表述</li><li>咒语实验</li></ul>
+                    <div class="card-footer"><a href="06.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="forest">
+                    <div class="card-header"><span class="chapter-num">07</span><span class="card-title">威慑论：黑暗森林的均衡机制</span></div>
+                    <ul class="topic-list"><li>威慑阶梯</li><li>执剑人制度</li><li>威慑稳定性</li></ul>
+                    <div class="card-footer"><a href="07.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="forest">
+                    <div class="card-header"><span class="chapter-num">08</span><span class="card-title">费米悖论的黑暗森林解答</span></div>
+                    <ul class="topic-list"><li>费米悖论</li><li>大过滤器假设</li><li>解答比较</li></ul>
+                    <div class="card-footer"><a href="08.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="forest">
+                    <div class="card-header"><span class="chapter-num">09</span><span class="card-title">宇宙战场：降维打击与规律武器化</span></div>
+                    <ul class="topic-list"><li>维度跌落</li><li>光速防御</li><li>物理的人为性</li></ul>
+                    <div class="card-footer"><a href="09.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="critique">
+                    <div class="card-header"><span class="chapter-num">10</span><span class="card-title">霍布斯、卢梭与自然状态</span></div>
+                    <ul class="topic-list"><li>自然状态学说</li><li>社会契约的宇宙失效</li><li>卢梭的反驳</li></ul>
+                    <div class="card-footer"><a href="10.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="critique">
+                    <div class="card-header"><span class="chapter-num">11</span><span class="card-title">法家、进化论与多元哲学解读</span></div>
+                    <ul class="topic-list"><li>宇宙法家学派</li><li>达尔文式天择</li><li>道家无为的张力</li></ul>
+                    <div class="card-footer"><a href="11.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="critique">
+                    <div class="card-header"><span class="chapter-num">12</span><span class="card-title">批判与反驳：黑暗森林的逻辑漏洞</span></div>
+                    <ul class="topic-list"><li>公理自悖</li><li>高阶文明例外</li><li>合作演化</li></ul>
+                    <div class="card-footer"><a href="12.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="critique">
+                    <div class="card-header"><span class="chapter-num">13</span><span class="card-title">从小说到现实：SETI/METI 生死辩论</span></div>
+                    <ul class="topic-list"><li>SETI 与 METI</li><li>霍金的警告</li><li>人类的篝火</li></ul>
+                    <div class="card-footer"><a href="13.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="beyond">
+                    <div class="card-header"><span class="chapter-num">14</span><span class="card-title">思想实验的极限：超越黑暗森林的可能性</span></div>
+                    <ul class="topic-list"><li>卡尔达肖夫指数</li><li>AI 文明的博弈</li><li>星际共生模型</li></ul>
+                    <div class="card-footer"><a href="14.html">开始学习 →</a></div>
+                </div>
+                <div class="card" data-cluster="beyond">
+                    <div class="card-header"><span class="chapter-num">15</span><span class="card-title">寂静的回响：宇宙社会学的终极命题</span></div>
+                    <ul class="topic-list"><li>逻辑回顾</li><li>大寂静的多重含义</li><li>人类的选择</li></ul>
+                    <div class="card-footer"><a href="15.html">开始学习 →</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="howto" aria-labelledby="howto-heading">
+            <h2 id="howto-heading">如何使用本课程</h2>
+            <p>课程默认面向对科幻、博弈论与伦理性问题都感兴趣的读者，不预设数学或天文学背景。建议按章顺序读，因为后半程的批判直接引用前半程的推导步骤。</p>
+            <div class="callout">
+                <strong>阅读约定：</strong>本课程讨论的对象主要是刘慈欣《三体》系列（《三体》2006、《黑暗森林》2008、《死神永生》2010）中提出的“宇宙社会学”设定。凡涉及小说内容的陈述，以原著表述为准；凡涉及现实科学或哲学理论的陈述，会尽量注明确切出处；无法溯源的具体数字一律标注为“<strong>教学示意</strong>”或“<strong>已作简化</strong>”，只用于说明机制，不作为事实证据。
+            </div>
+            <p>正文采用「设定 → 直觉 → 图示 → 形式化 → 可交互推演 → 反驳」的顺序组织，每章末尾给出该章要点与延伸问题。页内目录可跳转到各小节，图示与交互均为离线可用、无外部依赖。</p>
+        </section>
+
+        <footer class="page-footer">
+            <p>课程内容基于刘慈欣《三体》系列（重庆出版社）中的宇宙社会学设定进行教学化整理与批判性讨论。本页为课程目录。</p>
+        </footer>
+    </article>
+    </main>
 </div>
-
+</div>
 <script>
-    (function() {
-        var container = document.getElementById('cardContainer');
-        var emojiEl = document.querySelector('.header .emoji');
-        var titleEl = document.querySelector('.header .title-text');
-        var subEl = document.querySelector('.header .sub');
-        var footerEl = document.querySelector('.footer');
-
-        function showError(msg) {
-            container.innerHTML = '<div class="state-msg error">' + msg + '</div>';
-        }
-
-        fetch('courses.json')
-            .then(function(res) {
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                return res.json();
-            })
-            .then(function(data) {
-                document.title = data.title + ' · 课程目录';
-                emojiEl.textContent = data.emoji;
-                titleEl.textContent = data.title;
-                subEl.textContent = data.subtitle;
-                footerEl.innerHTML = '<span>' + data.chapterCount + '章</span> 实战体系 · 从入门到精通';
-
-                if (!data.chapters || data.chapters.length === 0) {
-                    showError('暂无课程数据');
-                    return;
-                }
-
-                container.innerHTML = '';
-                data.chapters.forEach(function(course) {
-                    var card = document.createElement('div');
-                    card.className = 'card';
-
-                    var headerDiv = document.createElement('div');
-                    headerDiv.className = 'card-header';
-
-                    var numSpan = document.createElement('span');
-                    numSpan.className = 'chapter-num';
-                    numSpan.textContent = course.num;
-
-                    var titleSpan = document.createElement('span');
-                    titleSpan.className = 'card-title';
-                    titleSpan.textContent = course.title;
-
-                    headerDiv.appendChild(numSpan);
-                    headerDiv.appendChild(titleSpan);
-                    card.appendChild(headerDiv);
-
-                    if (course.topics && course.topics.length > 0) {
-                        var topicUl = document.createElement('ul');
-                        topicUl.className = 'topic-list';
-                        course.topics.forEach(function(topic) {
-                            var li = document.createElement('li');
-                            li.textContent = topic;
-                            topicUl.appendChild(li);
-                        });
-                        card.appendChild(topicUl);
-                    }
-
-                    var footerDiv = document.createElement('div');
-                    footerDiv.className = 'card-footer';
-                    var link = document.createElement('a');
-                    link.href = course.file;
-                    link.textContent = '开始学习 ';
-                    footerDiv.appendChild(link);
-                    card.appendChild(footerDiv);
-
-                    container.appendChild(card);
-                });
-            })
-            .catch(function(err) {
-                showError('课程数据加载失败: ' + err.message + '。请刷新页面重试。');
+    (function () {
+        var buttons = Array.prototype.slice.call(document.querySelectorAll('.filters button'));
+        var cards = Array.prototype.slice.call(document.querySelectorAll('#cardGrid .card'));
+        var status = document.getElementById('filterStatus');
+        var names = { all: '全部', axiom: '公理与推导', forest: '黑暗森林与威慑', critique: '批判与现实', beyond: '超越与出路' };
+        function apply(filter) {
+            var shown = 0;
+            cards.forEach(function (card) {
+                var match = filter === 'all' || card.getAttribute('data-cluster') === filter;
+                if (match) { card.removeAttribute('hidden'); shown++; }
+                else { card.setAttribute('hidden', ''); }
             });
+            buttons.forEach(function (b) {
+                b.setAttribute('aria-pressed', b.getAttribute('data-filter') === filter ? 'true' : 'false');
+            });
+            status.textContent = filter === 'all'
+                ? '显示全部 ' + shown + ' 章。'
+                : '筛选「' + names[filter] + '」：显示 ' + shown + ' 章。';
+        }
+        buttons.forEach(function (b) {
+            b.addEventListener('click', function () { apply(b.getAttribute('data-filter')); });
+        });
+        apply('all');
     })();
 </script>
-
-<noscript>
-    <div style="background:#fcf0d9; padding:1rem; border-radius:20px; text-align:center; color:#92400e;">
-        请启用 JavaScript 以浏览课程目录。
-    </div>
-</noscript>
 </body>
 </html>
