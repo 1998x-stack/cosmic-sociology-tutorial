@@ -94,6 +94,27 @@ N = R* × fp × ne × fl × fi × fc × L
 关键洞察：L（文明寿命）和 fl（生命出现概率）是两个最大的不确定性来源。
 黑暗森林理论本质上是在说：L 被社会性因素系统性缩短了。</code></pre>
 
+        <div class="eq-block">
+            <p class="eq-label">式（8.1）德雷克方程（Frank Drake, 1961）</p>
+            <div class="math-equation" role="group" aria-label="德雷克方程">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="德雷克方程，可横向滚动">
+                    <math display="block" aria-label="可通讯文明数 N 等于恒星形成率 R 星、有行星恒星比例 fp、宜居行星数 ne、生命出现概率 fl、智慧出现概率 fi、可通讯文明比例 fc 与文明寿命 L 的连乘积">
+                        <mrow>
+                            <mi>N</mi><mo>=</mo>
+                            <msub><mi>R</mi><mo>&#x2217;</mo></msub><mo>&#x22C5;</mo>
+                            <msub><mi>f</mi><mi>p</mi></msub><mo>&#x22C5;</mo>
+                            <msub><mi>n</mi><mi>e</mi></msub><mo>&#x22C5;</mo>
+                            <msub><mi>f</mi><mi>l</mi></msub><mo>&#x22C5;</mo>
+                            <msub><mi>f</mi><mi>i</mi></msub><mo>&#x22C5;</mo>
+                            <msub><mi>f</mi><mi>c</mi></msub><mo>&#x22C5;</mo>
+                            <mi>L</mi>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>N 是银河系中可能与我们通讯的文明数；R<sub>&#x2217;</sub> 是恒星形成率（约 1–3 颗/年），后面的 f<sub>p</sub>、n<sub>e</sub>、f<sub>l</sub>、f<sub>i</sub>、f<sub>c</sub> 依次是“有行星”“宜居行星”“生命出现”“智慧演化”“可发射信号”的比例，L 是文明保持可探测状态的时间。方程的<strong>结构</strong>是德雷克 1961 年提出的；具体参数取值无一定论，本课的取值均为教学示意。</p>
+        </div>
+
         <p class="source-note"><strong>数据说明：</strong>上面德雷克方程的“乐观取值”与“悲观取值”两组参数（包括 fl=1e-6、L=10000 等）都是本课的<strong>教学示意</strong>，目的是展示“结果对未知参数极度敏感”；具体的乘法结果由本课自算，不是文献结论。德雷克 1961 年提出的只是方程的框架，并未给出唯一确定的 N 值。</p>
 
         <p>这就是费米悖论的标准框架——德雷克方程（Frank Drake, 1961）。它是一个很好的思维工具，但不是一个好的预测工具——因为大部分参数我们只能猜测。黑暗森林法则对这个方程的贡献在于：它提出了一项关于<strong>L（文明寿命）</strong>的特殊假设——<em>文明不是死于自然灾难或自我毁灭，而是死于其他文明的刻意毁灭。</em>如果黑暗森林成立，那么任何进入宇宙通讯阶段的文明都会很快被消灭，L自然被压缩到极短（可能仅够从发出第一个信号到被打击的几百年间）。</p>
@@ -231,6 +252,28 @@ N = R* × fp × ne × fl × fi × fc × L
   则 N_dark（可观察的文明数）仍然趋近于零。
 
 → 解释了"宇宙应该有大量文明，但我们一个也看不到"的矛盾</code></pre>
+
+        <div class="eq-block">
+            <p class="eq-label">式（8.2）黑暗森林对德雷克方程的修正</p>
+            <div class="math-equation" role="group" aria-label="黑暗森林修正后的德雷克方程">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="修正德雷克方程，可横向滚动">
+                    <math display="block" aria-label="可观察文明数 N 暗 等于德雷克方程前六项再乘以沉默比例 fs 与沉默期 L 撇">
+                        <mrow>
+                            <msub><mi>N</mi><mtext>暗</mtext></msub><mo>=</mo>
+                            <msub><mi>R</mi><mo>&#x2217;</mo></msub><mo>&#x22C5;</mo>
+                            <msub><mi>f</mi><mi>p</mi></msub><mo>&#x22C5;</mo>
+                            <msub><mi>n</mi><mi>e</mi></msub><mo>&#x22C5;</mo>
+                            <msub><mi>f</mi><mi>l</mi></msub><mo>&#x22C5;</mo>
+                            <msub><mi>f</mi><mi>i</mi></msub><mo>&#x22C5;</mo>
+                            <msub><mi>f</mi><mi>c</mi></msub><mo>&#x22C5;</mo>
+                            <msub><mi>f</mi><mi>s</mi></msub><mo>&#x22C5;</mo>
+                            <msup><mi>L</mi><mo>&#x2032;</mo></msup>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>与式（8.1）相比只多改了两项：新增沉默比例 f<sub>s</sub>，并把文明寿命 L 换成沉默期 L&#x2032;。当 f<sub>s</sub> 或 L&#x2032; 趋近 0 时，即使前面的生命与智慧概率很高，可观察文明数 N<sub>暗</sub> 仍可趋近 0。这两项的具体数值仍是本课的<strong>教学示意</strong>，不是观测结论。</p>
+        </div>
 
         <p>这个修正的漂亮之处在于：它<strong>不需要假设生命稀罕</strong>——事实上它可以接受"生命是宇宙中极为普遍的现象"这一假设，然后仍然给出"看不到任何文明"的预测。这是大多数其他假说做不到的。比如"地球唯一假说"（Rare Earth hypothesis, Ward & Brownlee, 2000）需要假设生命非常罕见；"大过滤器在早期"的版本也需要类似假设。黑暗森林不需要——它兼容乐观的生命观。</p>
 
