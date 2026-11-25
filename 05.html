@@ -100,6 +100,18 @@
 这个不等式结构是囚徒困境的本质。
 </code></pre>
 
+        <div class="eq-block">
+            <p class="eq-label">式（5.1）囚徒困境的收益排序</p>
+            <div class="math-equation" role="group" aria-label="囚徒困境的收益排序">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="收益排序公式，可横向滚动">
+                    <math display="block" aria-label="背叛诱惑 T 大于共同合作收益 R，R 大于互相背叛的惩罚 P，P 大于单方受骗 S">
+                        <mrow><mi>T</mi><mo>&gt;</mo><mi>R</mi><mo>&gt;</mo><mi>P</mi><mo>&gt;</mo><mi>S</mi></mrow>
+                    </math>
+                </div>
+            </div>
+            <p>其中 T（temptation，背叛诱惑）、R（reward，共同合作）、P（punishment，互相背叛）、S（sucker，单方受骗）。本章的示意赋值 T=4、R=3、P=2、S=1 只用于固定这一排序，不作为实际收益数据。</p>
+        </div>
+
         <div class="tip">
             <strong>关键洞察：</strong>只要文明的收益函数满足 T>R>P>S（背叛诱惑 > 合作收益 > 互相惩罚 > 上当受骗），那么无论对方做什么，背叛都是严格占优策略（strictly dominant strategy）。如果A相信B会合作，A背叛得到4分而合作只得到3分——背叛更好。如果A相信B会背叛，A背叛得到2分而合作只得到1分——背叛仍然更好。不管B选什么，A选背叛更优。这就是"背叛是占优策略"的含义——<em>理性</em>文明必然选择背叛。
         </div>
@@ -242,6 +254,24 @@
 
 当δ如此低时，即使百万次重复博弈也无法产生合作。
 </code></pre>
+
+        <div class="eq-block">
+            <p class="eq-label">式（5.2）星际场景下的折现因子分解</p>
+            <div class="math-equation" role="group" aria-label="折现因子的分解">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="折现因子分解公式，可横向滚动">
+                    <math display="block" aria-label="折现因子 delta 介于 0 与 1 之间，等于潜伏期折扣、技术爆炸折扣与猜疑链折扣三者之积">
+                        <mrow>
+                            <mi>δ</mi><mo>=</mo>
+                            <msub><mi>δ</mi><mtext>潜伏</mtext></msub><mo>×</mo>
+                            <msub><mi>δ</mi><mtext>科技</mtext></msub><mo>×</mo>
+                            <msub><mi>δ</mi><mtext>猜疑</mtext></msub><mo>,</mo>
+                            <mspace width="0.6em"></mspace><mn>0</mn><mo>&lt;</mo><mi>δ</mi><mo>&lt;</mo><mn>1</mn>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>民间定理要求 δ 足够大时合作才能成为均衡；星际场景把 δ 折成三项相乘，任一项趋近 0 都会使整个乘积趋近 0，于是“未来合作”的回报被极大地贴现。</p>
+        </div>
 
         <p class="source-note"><strong>数据说明：</strong>上面 δ 的三个取值及其乘积（≈0.005）是本章的<strong>教学示意</strong>，用于说明“多项折扣叠乘后会变得很小”这一方向，并无实测或仿真来源；绕得越远、追得越快、意图越难核对，乘积就越小。真正有来源的是“折现因子足够大时合作可以成为均衡”这一结论，它来自民间定理（见章末引用）。</p>
 

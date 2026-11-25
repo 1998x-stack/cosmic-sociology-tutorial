@@ -227,6 +227,22 @@ figcaption b, figcaption strong { color: #4c1d95; }
 /* === Section anchors scroll offset === */
 section[id], h2[id] { scroll-margin-top: 16px; }
 
+/* === MathML equations === */
+.math-inline {
+    font-family: "Cambria Math", "STIX Two Math", "Latin Modern Math", serif;
+    font-size: 1.02em;
+}
+.eq-block { margin: 16px 0; }
+.eq-label { font-size: 0.85rem; color: var(--subtle); margin-bottom: 4px; }
+.math-equation { max-width: 100%; min-width: 0; }
+.math-scroll {
+    max-width: 100%; min-width: 0; overflow-x: auto; overflow-y: hidden; padding: 6px 2px;
+}
+.math-scroll:focus-visible { outline: var(--focus); outline-offset: 2px; }
+.math-scroll math[display="block"] {
+    width: max-content; min-width: 100%; font-size: 1.25rem; padding: 4px 0;
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
     .container { grid-template-columns: 1fr; }
@@ -251,6 +267,8 @@ section[id], h2[id] { scroll-margin-top: 16px; }
 @media print {
     body { background: #fff; padding: 0; }
     .sidebar, .widget .controls, .skip-link, .footer-nav { display: none; }
+    .math-scroll { overflow: visible; }
+    .math-scroll math[display="block"] { font-size: 1rem; }
     .double-border { border: none; box-shadow: none; }
     .container { grid-template-columns: 1fr; }
     figure, table, .widget { break-inside: avoid; }
