@@ -109,6 +109,25 @@
    ⇒ 违约的预期成本 ≈ 0
    ⇒ 契约无约束力</code></pre>
 
+        <p>上面伪代码里的“P → 0”可以写成更精确的形式。设违约被察觉并受到惩罚的概率为 <math class="math-inline" aria-label="e"><mi>e</mi></math>，惩罚力度为 <math class="math-inline" aria-label="F"><mi>F</mi></math>，违约带来的收益为 <math class="math-inline" aria-label="G"><mi>G</mi></math>。契约要能自我执行，期望惩罚就必须不低于期望收益：</p>
+
+        <div class="eq-block">
+            <p class="eq-label">式（10.1）契约的自我执行条件</p>
+            <div class="math-equation" role="group" aria-label="自我执行契约的充要条件">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="自我执行契约条件公式，可横向滚动" style="overflow-x:auto;max-width:100%">
+                    <math display="block" aria-label="违约被惩罚的期望值 e 乘 F 不小于违约获利的期望值 1 减 e 乘 G，等价于 e 不小于 G 除以 F 加 G">
+                        <mrow>
+                            <mi>e</mi><mi>F</mi><mo>&#8805;</mo><mo>(</mo><mn>1</mn><mo>&#8722;</mo><mi>e</mi><mo>)</mo><mi>G</mi>
+                            <mspace width="0.8em"></mspace><mo>&#8660;</mo><mspace width="0.8em"></mspace>
+                            <mi>e</mi><mo>&#8805;</mo><mfrac><mi>G</mi><mrow><mi>F</mi><mo>+</mo><mi>G</mi></mrow></mfrac>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>星际场景把 <math class="math-inline" aria-label="e"><mi>e</mi></math> 推向 0：没有法庭、没有警察，承诺也不可核实（第 5 章的“验证鸿沟”）。一旦 <math class="math-inline" aria-label="e"><mi>e</mi></math> 趋于 0，不等式左边塔缩而右边仍为正，契约就失去约束力。这也解释了为什么“宇宙利维坦”方案不成立：让某个文明 C 当警察，至多把 <math class="math-inline" aria-label="e"><mi>e</mi></math> 从 0 提到某个值，但监督者本人不受监督，猜疑链在元层次上重建，<math class="math-inline" aria-label="e"><mi>e</mi></math> 又被打回 0。</p>
+            <p class="source-note"><strong>说明：</strong>式（10.1）是“自我执行契约”的标准条件（期望惩罚不低于期望收益，博弈论/契约理论的常规写法），不含任何外部数据；<math class="math-inline" aria-label="e"><mi>e</mi></math>、<math class="math-inline" aria-label="F"><mi>F</mi></math>、<math class="math-inline" aria-label="G"><mi>G</mi></math> 均无可观测取值，所以它只说明“<math class="math-inline" aria-label="e"><mi>e</mi></math> 趋于 0 时契约失效”这一形式结论，不涉及霍布斯或卢梭的原文表述。</p>
+        </div>
+
         <p>我在讲授国关理论时，经常遇到学生问："为什么联合国在现实国际政治中有用，但在宇宙尺度就不行了？"这是一个非常好的问题。答案是：联合国之所以"有用"（虽然非常有限），是因为参与的国家有共同利益——经济合作、环境保护、核不扩散——这些共同利益本身就是外部惩罚机制的一部分。而在宇宙尺度，两个文明之间可能<strong>零共同利益</strong>。它们的生物学基础不同、价值观不同、甚至它们感知的现实可能都不是同一个维度。在这种情况下，任何形式的"契约"都缺少最基本的信任基础。</p>
 
         <p>常被转述的一种说法是：2017 年牛津大学未来人类研究所（FHI）发布了一篇工作论文，题为《星际无政府状态与黑暗森林防御策略》，其中提出了一个“星际合作不可能性定理”。<strong>本课未能核实这篇文献的标题、年份与作者，请勿当作已发表的定理引用。</strong>但它大致的论证方向是可以独立检验的：给定足够大的文明间距离和足够深的文明间差异，合作均衡会退化到背叛。原因很简单：<strong>在重复囚徒困境中，合作的吸引力取决于未来互动的概率</strong>。而在星际尺度，由于光速限制和天文距离，两个文明之间可能只有一次互动机会——一次互动之后，其中一个可能已经因为超新星爆发或技术爆炸而消失了。这就把博弈从“重复囚徒困境”退化成了“一次性囚徒困境”，而一次性囚徒困境的唯一纳什均衡就是互相背叛。（这一步与 Axelrod 关于重复博弈的条件一致，见章末引用。）</p>
