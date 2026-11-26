@@ -146,6 +146,25 @@
             <strong>重要漏洞——这个自悖依赖宇宙文明密度假设：</strong>如果宇宙中文明密度极低（比如全银河系只有不到100个技术文明），那么A打击B时，恰好被第三方观测到的概率很低。但问题在于：<em>如果文明密度真这么低，黑暗森林的驱动力也就不存在了</em>——因为猜疑链虽然存在，但A没有理由主动去暴露自己打击一个"几乎不可能遇到"的文明。这就形成了一个有趣的"黑暗森林两难"：你要么假设文明密度很高（从而黑暗打击普遍存在），但这时自悖就变得严重；要么假设文明密度很低（从而黑暗打击安全），但这时你根本不需要发动打击。<strong>这个两难是黑暗森林理论目前最深刻的逻辑漏洞之一。</strong>
         </div>
 
+        <p>这个两难可以写成一个很短的期望值不等式。设 <math class="math-inline" aria-label="q"><mi>q</mi></math> 为“打击被第三方观测到并逆推出 A 坐标”的概率，<math class="math-inline" aria-label="B"><mi>B</mi></math> 为清除 B 带来的收益（避免未来威胁），<math class="math-inline" aria-label="L"><mi>L</mi></math> 为 A 被定位后遭到的损失。先发制人优于保持隐蔽，当且仅当：</p>
+
+        <div class="eq-block">
+            <p class="eq-label">式（12.1）打击的自悖条件</p>
+            <div class="math-equation" role="group" aria-label="打击的期望值条件">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="打击自悖条件公式，可横向滚动" style="overflow-x:auto;max-width:100%">
+                    <math display="block" aria-label="当且仅当（1 减 q）乘 B 大于 q 乘 L，等价于 q 小于 B 除以 B 加 L 时，先发制人优于保持隐蔽">
+                        <mrow>
+                            <mo>(</mo><mn>1</mn><mo>&#8722;</mo><mi>q</mi><mo>)</mo><mi>B</mi><mo>&gt;</mo><mi>q</mi><mi>L</mi>
+                            <mspace width="0.8em"></mspace><mo>&#8660;</mo><mspace width="0.8em"></mspace>
+                            <mi>q</mi><mo>&lt;</mo><mfrac><mi>B</mi><mrow><mi>B</mi><mo>+</mo><mi>L</mi></mrow></mfrac>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>右边这个分数 <math class="math-inline" aria-label="B 除以 B 加 L"><mfrac><mi>B</mi><mrow><mi>B</mi><mo>+</mo><mi>L</mi></mrow></mfrac></math> 是一个“阈值”：只有暴露风险低于它，打击才划算。现在把文明密度 <math class="math-inline" aria-label="n"><mi>n</mi></math> 引进来：密度越高，可观测的第三方越多，<math class="math-inline" aria-label="q"><mi>q</mi></math> 单调上升。于是密度两难就是：<strong>低密度时 <math class="math-inline" aria-label="q"><mi>q</mi></math> 小、但 <math class="math-inline" aria-label="B"><mi>B</mi></math> 也小；高密度时 <math class="math-inline" aria-label="B"><mi>B</mi></math> 大、但 <math class="math-inline" aria-label="q"><mi>q</mi></math> 也大</strong>——不等式两端朝相反方向拉，剩下一个很小的“同时成立”窗口。</p>
+            <p class="source-note"><strong>说明：</strong>式（12.1）是期望值比较的直接改写（标准决策论，无需外部数据）；但 <math class="math-inline" aria-label="q"><mi>q</mi></math>、<math class="math-inline" aria-label="B"><mi>B</mi></math>、<math class="math-inline" aria-label="L"><mi>L</mi></math> 均无可观测取值，所以它只给出“打击是否理性依赖文明密度”的形式条件，<strong>不构成</strong>对黑暗森林的证伪。</p>
+        </div>
+
         <figure>
             <svg role="img" aria-labelledby="fig-ch12-title fig-ch12-desc" viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg">
                 <title id="fig-ch12-title">文明密度的两难与长期合作优势的临界时间</title>
