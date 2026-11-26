@@ -107,6 +107,28 @@
       因为该区域的物理条件（如空间距离极近）
       使得合作的收益 > 背叛的收益。</code></pre>
 
+        <p>但“适应度”到底是什么、它怎么变成“占比变化”？伪代码没法回答。把“统计上占优”写成动态，最简洁的工具是演化博弈论里的复制方程：设策略 <math class="math-inline" aria-label="策略 i"><mi>i</mi></math> 在群体中的占比为 <math class="math-inline" aria-label="x 下标 i"><msub><mi>x</mi><mi>i</mi></msub></math>、适应度为 <math class="math-inline" aria-label="f 下标 i"><msub><mi>f</mi><mi>i</mi></msub></math>：</p>
+
+        <div class="eq-block">
+            <p class="eq-label">式（11.1）复制动力学：适应度高于平均的策略占比上升</p>
+            <div class="math-equation" role="group" aria-label="复制方程">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="复制方程公式，可横向滚动" style="overflow-x:auto;max-width:100%">
+                    <math display="block" aria-label="策略 i 占比的变化率等于该占比乘以自身适应度与平均适应度之差；平均适应度是所有策略适应度的加权和">
+                        <mrow>
+                            <mfrac><mrow><mi>d</mi><msub><mi>x</mi><mi>i</mi></msub></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>
+                            <mo>=</mo>
+                            <msub><mi>x</mi><mi>i</mi></msub><mo>(</mo><msub><mi>f</mi><mi>i</mi></msub><mo>&#8722;</mo><mover accent="true"><mi>f</mi><mo>&#175;</mo></mover><mo>)</mo>
+                            <mo>,</mo><mspace width="0.6em"></mspace>
+                            <mover accent="true"><mi>f</mi><mo>&#175;</mo></mover><mo>=</mo>
+                            <munder><mo>&#8721;</mo><mi>j</mi></munder><msub><mi>x</mi><mi>j</mi></msub><msub><mi>f</mi><mi>j</mi></msub>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>其中 <math class="math-inline" aria-label="f 上标横线"><mover accent="true"><mi>f</mi><mo>&#175;</mo></mover></math> 是群体的平均适应度。这个式子只说一件事：<strong>适应度高于平均的策略占比会上升，低于平均的会下降</strong>。“占优”指的就是这个过程，而不是某一次博弈的胜负。它同时提示了可质疑点：结论完全取决于 <math class="math-inline" aria-label="f 下标 i"><msub><mi>f</mi><mi>i</mi></msub></math> 怎么取值，而本章的适应度项（扩张速度、清理效率、隐蔽能力）是本课整理的模型，没有观测来源。</p>
+            <p class="source-note"><strong>说明：</strong>式（11.1）的复制方程是演化博弈论的标准结果（Taylor &amp; Jonker, 1978，见章末引用），它描述的是“给定适应度函数后占比如何演化”；<strong>不是</strong>“清理策略在真实宇宙中一定占优”的证据。</p>
+        </div>
+
         <p>这个推论意味着什么？如果达尔文的自然选择在文明尺度上运作，那么经过足够长的时间，宇宙中存活下来的文明只会有两种：要么是极其善于隐蔽的（"藏好自己"），要么是极其善于主动清理的（"做好清理"）。而在这两种策略中，善于隐蔽的策略有一个致命缺陷：你只能隐藏，无法清除潜在的威胁。如果你发现了一个新生的文明，你不清理它，它可能在几百年后发生技术爆炸，然后把你的隐蔽之处翻个底朝天。因此，<strong>从进化论的角度看，黑森清理不是一种"邪恶"的选择，而是一种被自然选择筛选出来的、在统计上占优的策略。</strong></p>
 
         <p>这听起来很残酷，但你想想地球上的生命史。据估计，自生命起源以来，地球上曾经存在过约50亿个物种——但其中绝大多数已经灭绝了（“99.9% 已灭绝”是一个被广泛转引的粗略估计，不同估计差异很大，此处只用作量级参考）。自然选择没有"道德"的概念。它只是一台巨大的概率机器，任何在统计上不利于生存的特征都会被淘汰。"清理"在文明尺度上之所以可能成为一个被筛选出的特征，不是因为文明选择了残忍，而是因为不选择残忍的文明，在统计上被淘汰了。<strong>黑暗森林不是文明的选择，而是宇宙的自然选择。</strong></p>
@@ -248,6 +270,7 @@
                 <li>《老子》（通行本），第五十七、八十章等。“小国寡民”“无为”与“不以兵强天下”的思想出自其中。</li>
                 <li>Charles Darwin, <em>On the Origin of Species</em> (1859)。自然选择机制与“适者生存”的原始表述出处。</li>
                 <li>David Hume, <em>A Treatise of Human Nature</em> (1739–40)，第三卷。“是”推不出“应该”的论述（通常称为休谟之刀）出自此处。</li>
+                <li>Peter D. Taylor &amp; Leo B. Jonker (1978), “Evolutionary stable strategies and game dynamics”, <em>Mathematical Biosciences</em> 40(1–2), 145–156。复制方程的出处：<a href="https://doi.org/10.1016/0025-5564(78)90077-9">doi:10.1016/0025-5564(78)90077-9</a>。</li>
                 <li>刘慈欣，《三体 III·死神永生》（重庆出版社，2010）。“藏好自己，做好清理”与“归零者”均出自该书。</li>
             </ul>
             <p class="source-note">本章纪律：正文中引用的“99.997% 胜率”“约 50 亿个物种、99.9% 已灭绝”等数字均已在对应位置标为教学示意或粗略估计；它们只用于传递定性结论，不作为数据引用。</p>
