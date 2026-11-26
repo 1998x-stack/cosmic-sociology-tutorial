@@ -107,6 +107,44 @@
             </tbody>
         </table>
 
+        <p>其中“生存优先级”这一条——也是整条公理最核心的断言——可以被写成一个精确的偏好结构。设每个结果 <math class="math-inline" aria-label="结果 x 由生存状态 s 下标 x 与其他价值 v 下标 x 两个属性构成"><mrow><mi>x</mi><mo>=</mo><mo>(</mo><msub><mi>s</mi><mi>x</mi></msub><mo>,</mo><msub><mi>v</mi><mi>x</mi></msub><mo>)</mo></mrow></math>，其中 <math class="math-inline" aria-label="s 下标 x 表示 x 的生存状态"><msub><mi>s</mi><mi>x</mi></msub></math> 是生存与否（0 或 1），<math class="math-inline" aria-label="v 下标 x 表示 x 的其他价值"><msub><mi>v</mi><mi>x</mi></msub></math> 是其他价值。那么“生存压倒一切”就是一个<strong>字典序</strong>偏好：</p>
+
+        <div class="eq-block">
+            <p class="eq-label">式（2.1）“生存优先”的字典序表述</p>
+            <div class="math-equation" role="group" aria-label="生存优先的字典序偏好定义">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="字典序偏好公式，可横向滚动">
+                    <math display="block" aria-label="x 优于 y，当且仅当 x 的生存状态高于 y，或者两者生存状态相同而 x 的其他价值高于 y">
+                        <mrow>
+                            <mi>x</mi><mo>&#8827;</mo><mi>y</mi><mspace width="0.5em"></mspace><mo>&#8660;</mo><mspace width="0.5em"></mspace>
+                            <mo>(</mo><msub><mi>s</mi><mi>x</mi></msub><mo>&gt;</mo><msub><mi>s</mi><mi>y</mi></msub><mo>)</mo>
+                            <mo>&#8744;</mo>
+                            <mo>(</mo><msub><mi>s</mi><mi>x</mi></msub><mo>=</mo><msub><mi>s</mi><mi>y</mi></msub><mo>&#8743;</mo><msub><mi>v</mi><mi>x</mi></msub><mo>&gt;</mo><msub><mi>v</mi><mi>y</mi></msub><mo>)</mo>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>字典序意味着：只要生存状态更高，结果就更好，无论其他价值差多少；只有在生存状态相同时，才轮到比较其他价值。这正是“当生存与其他价值冲突时生存获胜”的形式化。</p>
+        </div>
+
+        <p>这个式子的好处是把可质疑点暴露得很清楚。<strong>它只在生存真能被表示成二值 0/1 时成立</strong>：如果“生存”有程度之分（比如文明只延续了 80%），或者生存本身就是一种连续权衡，字典序就退化为普通加性偏好，第一公理的“压倒一切”也就不再成立。同样地，一个已经进入后稀缺阶段的文明可以把生存设为恒定，那时偏好会整体塌缩到价值维度上——下一段给出它的形式。</p>
+
+        <div class="eq-block">
+            <p class="eq-label">式（2.2）后稀缺情形：生存不再是约束</p>
+            <div class="math-equation" role="group" aria-label="后稀缺情形下偏好退化为价值排序">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="后稀缺偏好公式，可横向滚动">
+                    <math display="block" aria-label="当 x 与 y 的生存状态都等于 1 时，x 优于 y 当且仅当 x 的其他价值高于 y">
+                        <mrow>
+                            <msub><mi>s</mi><mi>x</mi></msub><mo>=</mo><msub><mi>s</mi><mi>y</mi></msub><mo>=</mo><mn>1</mn>
+                            <mspace width="0.6em"></mspace><mo>&#8658;</mo><mspace width="0.6em"></mspace>
+                            <mo>(</mo><mi>x</mi><mo>&#8827;</mo><mi>y</mi><mo>&#8660;</mo><msub><mi>v</mi><mi>x</mi></msub><mo>&gt;</mo><msub><mi>v</mi><mi>y</mi></msub><mo>)</mo>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>这时“生存第一”自动失效：偏好完全由其他价值决定。第 4 节讨论的“后稀缺文明选择好奇心而非生存”，在这个框架里就是式（2.1）中 <math class="math-inline" aria-label="s 下标 x 等于 s 下标 y 等于 1"><mrow><msub><mi>s</mi><mi>x</mi></msub><mo>=</mo><msub><mi>s</mi><mi>y</mi></msub><mo>=</mo><mn>1</mn></mrow></math> 的特殊情形，而不是对理性的背叛。</p>
+            <p class="source-note"><strong>说明：</strong>式（2.1）与（2.2）是本课程为了把“生存优先”讲清楚而引入的形式化（字典序偏好是决策论中的标准工具），<strong>不是</strong>刘慈欣原著中的表述。它们只刻画“优先级”这一子命题；“文明”的边界（第 3 节）与“是否所有文明都如此”（第 4 节）仍需单独讨论。</p>
+        </div>
+
         <p>从进化生物学的角度看，第一公理似乎很合理。所有成功延续至今的物种都具备强大的生存本能。但这里的陷阱在于：<strong>进化论说的是"那些碰巧有利生存的特征会留下来"，而不是"物种有意识地追求生存"。</strong>前者是自然选择的结果描述，后者是目的论（teleology）的假设——这二者有本质的区别。</p>
 
         <div class="warning">
