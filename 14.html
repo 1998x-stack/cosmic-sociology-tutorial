@@ -91,6 +91,16 @@
             <p>这里 P 是文明可支配的功率（瓦特）。三个锚点由卡尔达肖夫 1964 年的三类文明确定：I 型 P≈10<sup>16</sup> W → K=1，II 型 P≈10<sup>26</sup> W → K=2，III 型 P≈10<sup>36</sup> W → K=3。上面的连续插值是后人的常用推广，用来把能量差换算成可绘图的一个数；它复现上述锚点，但并不是卡尔达肖夫本人给出的公式。</p>
         </div>
 
+        <div class="widget" id="kardashev-verify">
+            <h3>可运行的验证：连续形式能否复现三个锚点</h3>
+            <p>式（14.1）在页面里当场算一遍：把三类文明的能量锚点代入 K=(log<sub>10</sub>P−6)/10，看能否精确得到 K=1/2/3。数值由页面脚本实时计算，并与一个独立写死的期望值比对；比对失败会直接显示，而不是静默通过。</p>
+            <ul id="kardashev-verify-list">
+                <li>正在计算…</li>
+            </ul>
+            <p class="readout" id="kardashev-verify-status" role="status" aria-live="polite">正在计算…</p>
+            <p class="source-note"><strong>说明：</strong>三个能量锚点（10<sup>16</sup> / 10<sup>26</sup> / 10<sup>36</sup> W）来自卡尔达肖夫 1964 年对三类文明的界定；连续形式 K=(log<sub>10</sub>P−6)/10 是后人推广，并非卡尔达肖夫本人给出的公式。本校验只验证该推广能复现三类文明的 K=1/2/3 这一算术事实，不涉及任何文明是否真实存在。</p>
+        </div>
+
         <p>为什么要引入这个框架？因为<strong>不同能量层级的文明面临的生存约束完全不同。</strong>黑暗森林的推导假定的是——所有的文明都面临资源有限、需求无限的约束。但一个II型或III型文明，它的"资源约束"和我们理解的完全不同。</p>
 
         <p>我们来深入分析：</p>
@@ -340,6 +350,24 @@ III型文明
             b.addEventListener('click', function () { show(Number(b.getAttribute('data-step'))); });
         });
         show(0);
+    })();
+    (function () {
+        var anchors = [[1e16, 1], [1e26, 2], [1e36, 3]];
+        var list = document.getElementById('kardashev-verify-list');
+        var status = document.getElementById('kardashev-verify-status');
+        if (!list || !status) { return; }
+        function k(p) { return (Math.log10(p) - 6) / 10; }
+        var rows = '', ok = true;
+        for (var i = 0; i < anchors.length; i++) {
+            var p = anchors[i][0], exp = anchors[i][1], got = k(p);
+            var hit = Math.abs(got - exp) < 1e-9;
+            ok = ok && hit;
+            rows += '<li>P = 10<sup>' + Math.round(Math.log10(p)) + '</sup> W → K = (log&#8321;&#8320;P − 6)/10 = ' + got + '（期望 ' + exp + '）' + (hit ? ' &#10003;' : ' &#10007;') + '</li>';
+        }
+        list.innerHTML = rows;
+        status.innerHTML = ok
+            ? '<span class="stage-label">校验通过：</span>连续形式精确复现三个锚点 K=1/2/3，与卡尔达肖夫的三类文明界定一致。'
+            : '<span class="stage-label">校验失败：</span>计算结果与期望锚点不符，请以正文公式为准。';
     })();
 </script>
 </body>
