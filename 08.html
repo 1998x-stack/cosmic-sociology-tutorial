@@ -117,6 +117,16 @@ N = R* × fp × ne × fl × fi × fc × L
 
         <p class="source-note"><strong>数据说明：</strong>上面德雷克方程的“乐观取值”与“悲观取值”两组参数（包括 fl=1e-6、L=10000 等）都是本课的<strong>教学示意</strong>，目的是展示“结果对未知参数极度敏感”；具体的乘法结果由本课自算，不是文献结论。德雷克 1961 年提出的只是方程的框架，并未给出唯一确定的 N 值。</p>
 
+        <div class="widget" id="drake-verify">
+            <h3>可运行的验证：两组取值代进方程</h3>
+            <p>把上面的“乐观取值”与“悲观取值”代入式（8.1）N=R<sub>∗</sub>·f<sub>p</sub>·n<sub>e</sub>·f<sub>l</sub>·f<sub>i</sub>·f<sub>c</sub>·L，在页面里当场算出来，并与两组独立写死的期望量级比对。失败会直接显示，而不是静默通过。</p>
+            <ul id="drake-verify-list">
+                <li>正在计算…</li>
+            </ul>
+            <p class="readout" id="drake-verify-status" role="status" aria-live="polite">正在计算…</p>
+            <p class="source-note"><strong>说明：</strong>两组参数（乐观：R<sub>∗</sub>=1.5, f<sub>p</sub>=1.0, n<sub>e</sub>=0.4, f<sub>l</sub>=0.33, f<sub>i</sub>=0.01, f<sub>c</sub>=0.1, L=10<sup>4</sup>；悲观：f<sub>l</sub>=10<sup>−6</sup>, L=500，其余同）都是本课的<strong>教学示意</strong>，不是文献取值。德雷克 1961 年只给出了方程的框架，并未确定这些参数；本校验只核对“这两组示意取值相乘等于正文所写的结果”这一算术事实，不构成对 N 的预测。</p>
+        </div>
+
         <p>这就是费米悖论的标准框架——德雷克方程（Frank Drake, 1961）。它是一个很好的思维工具，但不是一个好的预测工具——因为大部分参数我们只能猜测。黑暗森林法则对这个方程的贡献在于：它提出了一项关于<strong>L（文明寿命）</strong>的特殊假设——<em>文明不是死于自然灾难或自我毁灭，而是死于其他文明的刻意毁灭。</em>如果黑暗森林成立，那么任何进入宇宙通讯阶段的文明都会很快被消灭，L自然被压缩到极短（可能仅够从发出第一个信号到被打击的几百年间）。</p>
 
         <div class="tip">
@@ -356,6 +366,22 @@ N = R* × fp × ne × fl × fi × fc × L
             b.addEventListener('click', function () { show(Number(b.getAttribute('data-step'))); });
         });
         show(0);
+    })();
+    (function () {
+        var opt = [1.5, 1.0, 0.4, 0.33, 0.01, 0.1, 10000];
+        var pes = [1.5, 1.0, 0.4, 1e-6, 0.01, 0.1, 500];
+        function prod(a) { return a.reduce(function (x, y) { return x * y; }, 1); }
+        var no = prod(opt), np = prod(pes);
+        var list = document.getElementById('drake-verify-list');
+        var status = document.getElementById('drake-verify-status');
+        if (!list || !status) { return; }
+        list.innerHTML =
+            '<li>乐观取值：N = ' + no.toFixed(2) + '（期望约 2）</li>' +
+            '<li>悲观取值：N = ' + np.toExponential(1) + '（期望约 3×10⁻⁷）</li>';
+        var ok = Math.abs(no - 1.98) < 1e-9 && Math.abs(np - 3e-7) < 1e-15;
+        status.innerHTML = ok
+            ? '<span class="stage-label">校验通过：</span>乐观取值给出 N≈1.98，悲观取值给出 N≈3×10⁻⁷——两组示意参数的乘积与正文一致，N 对 f<sub>l</sub> 与 L 极度敏感。'
+            : '<span class="stage-label">校验失败：</span>计算结果与正文所写不符，请以方程为准。';
     })();
 </script>
 </body>
