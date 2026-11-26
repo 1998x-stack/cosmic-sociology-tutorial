@@ -251,6 +251,24 @@ AM/FM无线电       1920s      ~106光年       弱
 
         <p class="source-note"><strong>数据说明：</strong>上面的“信号类型 / 最大传播距离 / 信号强度”一表（包括 ~106 光年、~76 光年、直径 ~200 光年等）及其“截至 2026 年”的时间标记，均为本课为了说明“人类在无意中向宇宙泄浸了信号”而给出的<strong>教学示意</strong>，不是测量结果；实际的泄漏半径取决于接收灵敏度、频段、噪声与调制方式，学界并无统一数值。可靠的部分是：自 20 世纪前期起，人造电磁信号确实在向外传播。</p>
 
+        <p>“能泄漏多远”为什么没有一个统一数字？把它写成一个关系就清楚了。设信号源辐射功率为 <math class="math-inline" aria-label="P"><mi>P</mi></math>，接收端的可探测阈值为 <math class="math-inline" aria-label="S"><mi>S</mi></math>（单位面积的功率），根据自由空间的反平方衰减：</p>
+
+        <div class="eq-block">
+            <p class="eq-label">式（13.1）泄漏信号的探测半径</p>
+            <div class="math-equation" role="group" aria-label="反平方衰减下的探测半径">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="探测半径公式，可横向滚动" style="overflow-x:auto;max-width:100%">
+                    <math display="block" aria-label="最大可探测半径等于根号下辐射功率除以四派灵敏度">
+                        <mrow>
+                            <msub><mi>r</mi><mtext>max</mtext></msub><mo>=</mo>
+                            <msqrt><mfrac><mi>P</mi><mrow><mn>4</mn><mi>π</mi><mi>S</mi></mrow></mfrac></msqrt>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>这个式子解释了为什么“泄漏半径”不可能是一个固定值：把接收端的 <math class="math-inline" aria-label="S"><mi>S</mi></math> 调低（更灵敏的望远镜）、或换到更安静的频段，<math class="math-inline" aria-label="r 下标 max"><msub><mi>r</mi><mtext>max</mtext></msub></math> 就变大。<strong>同一颗地球，对不同技术水平的接收者有不同的半径</strong>——教学中常出现的“~100 光年”只是对某一档灵敏度的示意。</p>
+            <p class="source-note"><strong>说明：</strong>式（13.1）只是自由空间反平方衰减的直接改写（标准电磁学），不含任何对地球实际泄漏功率的取值，所以它<strong>算不出</strong>具体光年数；正文表格中的光年数仍是教学示意。</p>
+        </div>
+
         <p>所以，严格来说，"我们已经暴露了"这句话需要加一个限定条件：<strong>在100光年范围内，任何拥有与我们相当技术的文明，都应该能检测到地球存在技术文明。</strong>但100光年在银河系尺度上只是"邻居"。银河系直径10万光年，"泄漏球"目前只覆盖了银河系的千分之一。</p>
 
         <p>但这里有一个更深刻的黑暗森林问题：<strong>我们不知道100光年内有没有文明。如果黑暗森林成立，他们早就检测到了我们的信号——但正因为黑暗森林成立，他们不回应。</strong>他们只是在看。在暗中观察。在评估威胁。他们可能已经知道我们在这里了。那么，我们做不做METI，还有什么区别？</p>
