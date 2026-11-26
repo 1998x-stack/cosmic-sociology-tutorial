@@ -275,6 +275,18 @@
 
         <p class="source-note"><strong>数据说明：</strong>上面 δ 的三个取值及其乘积（≈0.005）是本章的<strong>教学示意</strong>，用于说明“多项折扣叠乘后会变得很小”这一方向，并无实测或仿真来源；绕得越远、追得越快、意图越难核对，乘积就越小。真正有来源的是“折现因子足够大时合作可以成为均衡”这一结论，它来自民间定理（见章末引用）。</p>
 
+        <div class="widget" id="pd-verify">
+            <h3>可运行的验证：占优性与合作阈值</h3>
+            <p>上面两步推导都能在页面里当场算一遍，不依赖任何外部文件。下面的数值由页面脚本用本章矩阵实时计算，并与一个独立写死的期望值比对；比对失败会直接显示出来，而不是静默通过。</p>
+            <ul id="pd-verify-list">
+                <li>占优性：计算中…</li>
+                <li>合作阈值 δ*：计算中…</li>
+                <li>星际场景 δ：计算中…</li>
+            </ul>
+            <p class="readout" id="pd-verify-status" role="status" aria-live="polite">正在计算…</p>
+            <p class="source-note"><strong>公式来源：</strong>在重复囚徒困境中，用“冷酷触发”策略维持合作的条件是折现因子满足 δ ≥ (T−R)/(T−P)（Axelrod, <em>The Evolution of Cooperation</em>, 1984；对折现因子的形式化处理见章末 Fudenberg–Maskin, 1986）。收益 4/3/2/1 是本章的<strong>教学示意</strong>，所以由此算出的 δ*=0.5 只对应这组示意取值，不是普适常数。</p>
+        </div>
+
         <p>这个分析给出了一个令人窒息的结论：<strong>不是文明不够善良所以不合作，而是数学结构使得合作在逻辑上不可能。</strong></p>
 
         <div class="tip">
@@ -381,6 +393,25 @@
             b.addEventListener('click', function () { show(Number(b.getAttribute('data-step'))); });
         });
         show(0);
+    })();
+    (function () {
+        var T = 4, R = 3, P = 2, S = 1;
+        var dominant = (T >= R) && (P >= S);
+        var threshold = (T - R) / (T - P);
+        var scenario = 0.5 * 0.1 * 0.1;
+        var expected = 0.5;
+        var list = document.getElementById('pd-verify-list');
+        var status = document.getElementById('pd-verify-status');
+        if (!list || !status) { return; }
+        function f(x) { return x.toFixed(3); }
+        list.innerHTML =
+            '<li>占优性检查：T&#8805;R 且 P&#8805;S &#8658; ' + (dominant ? '背叛是弱占优策略（本例中两列都严格更优）' : '不成立') + '</li>' +
+            '<li>合作阈值 δ* = (T−R)/(T−P) = (' + T + '−' + R + ')/(' + T + '−' + P + ') = ' + f(threshold) + '</li>' +
+            '<li>星际场景 δ &#8776; 0.5×0.1×0.1 = ' + f(scenario) + '，远小于 δ*</li>';
+        var ok = dominant && Math.abs(threshold - expected) < 1e-9 && scenario < threshold;
+        status.innerHTML = ok
+            ? '<span class="stage-label">校验通过：</span> 在本章示意取值下，背叛占优，且 δ=0.005 &lt; δ*=0.5——重复博弈的“未来回报”被折到不足以维持合作。'
+            : '<span class="stage-label">校验失败：</span> 计算结果与预期不符，请以正文公式为准。';
     })();
 </script>
 </body>
