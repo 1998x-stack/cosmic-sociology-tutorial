@@ -139,6 +139,25 @@
   行星 → 变成一幅无限薄的"星图"
   太阳 → 二维化后仍发光，但变成圆盘状</code></pre>
 
+        <p>这个“压扁”可以用一个投影映射精确写出来——它是线性的，因此信息损失可以直接算出来：</p>
+
+        <div class="eq-block">
+            <p class="eq-label">式（9.1）降维投影的信息损失</p>
+            <div class="math-equation" role="group" aria-label="降维投影与它的零化度">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="降维投影公式，可横向滚动" style="overflow-x:auto;max-width:100%">
+                    <math display="block" aria-label="投影 pi 把三维点 x y z 映到二维点 x y，其核空间维数为 3 减 2 等于 1">
+                        <mrow>
+                            <mi>π</mi><mo>:</mo><msup><mi>ℝ</mi><mn>3</mn></msup><mo>&#8594;</mo><msup><mi>ℝ</mi><mn>2</mn></msup><mo>,</mo><mspace width="0.5em"></mspace>
+                            <mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>)</mo><mo>&#8614;</mo><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo><mo>,</mo><mspace width="0.7em"></mspace>
+                            <mtext>dim</mtext><mo>&#8289;</mo><mtext>ker</mtext><mo>&#8289;</mo><mi>π</mi><mo>=</mo><mn>3</mn><mo>&#8722;</mo><mn>2</mn><mo>=</mo><mn>1</mn>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>核空间的维数为 1，意思是整个 z 轴方向被压没了：所有只差一个 z 坐标的点都被映到同一点，映射因此不是一一对应（非单射），也就无法反演。二维化的“不可逆”不是修辞，而是这个映射的数学性质。</p>
+            <p class="source-note"><strong>说明：</strong>式（9.1）是本课对小说“降维”设定的形式化（投影与秩-零化度定理属线性代数标准结论），它只说明“二维化必然丢失一维信息”，<strong>不代表</strong>现实中存在能降低空间维度的武器。</p>
+        </div>
+
         <p>在小说中，太阳系被二维化的那段描写是《三体》全书最令人难忘的场景之一。罗辑——曾经的执剑人——站在冥王星的地面博物馆前，看着二维化平面像一道无限延伸的彩虹一样吞没整个太阳系。这不是被"杀死"，而是被"变成永恒的画"——在二维平面上永远保存，但永远失去了三维意义上的生命。</p>
 
         <p>你可能会问：那攻击者自己不怕被波及吗？这就是关键——<strong>在黑暗森林的高阶版本中，攻击者是在"清理"而不是在"战斗"。</strong>歌者文明不是在和三体或人类打仗——他们只是像园丁修剪枯枝一样，清理那些暴露出坐标的恒星系。对他们的位置来说，二向箔是单向投放的——就像一个炸弹被丢进山洞，丢炸弹的人自己不用进去。如果歌者自己也处于三维空间，他们必须小心不被自己的武器波及。但这恰恰说明了一件事：<strong>降维战争打到后期，生存的方式就是升到更高的维度——但这又会迫使对手也升维，形成一场毁灭性的维度军备竞赛。</strong></p>
@@ -236,9 +255,28 @@
 【与黑暗森林的关系】
   黑暗森林说：暴露即死亡。
   黑域说：不暴露，但也不生存（在宇宙意义上）。
-  你存在，但宇宙不知道你存在——你变成了"不在场"的存在。</code></pre>
+  你存在，但宇宙不知道你存在——你变成了“不在场”的存在。</code></pre>
 
-        <p class="source-note"><strong>数据说明：</strong>上面“光速降低到 16.7 km/s（太阳系逃逸速度）”等取值是小说设定的<strong>教学示意</strong>，用于说明“把光速降到逃逸速度以下就形成事件视界”这一逻辑，不是工程参数。</p>
+        <p>“低光速泡”为什么能变成一道不可逾越的墙，其实只需要一个不等式。设该区域的引力质量为 <math class="math-inline" aria-label="M"><mi>M</mi></math>、半径为 <math class="math-inline" aria-label="R"><mi>R</mi></math>，逃逸速度为 <math class="math-inline" aria-label="v 下标 esc"><msub><mi>v</mi><mtext>esc</mtext></msub></math>：</p>
+
+        <div class="eq-block">
+            <p class="eq-label">式（9.2）黑域（安全声明）的形成条件</p>
+            <div class="math-equation" role="group" aria-label="黑域形成条件">
+                <div class="math-scroll" data-math-scroll tabindex="0" role="region" aria-label="黑域条件公式，可横向滚动" style="overflow-x:auto;max-width:100%">
+                    <math display="block" aria-label="当降低后的光速 c 撇小于逃逸速度 v 下标 esc 时，区域与外界因果隔离；逃逸速度等于根号下 2GM 除以 R">
+                        <mrow>
+                            <msup><mi>c</mi><mo>&#8242;</mo></msup><mo>&lt;</mo><msub><mi>v</mi><mtext>esc</mtext></msub><mo>(</mo><mi>M</mi><mo>,</mo><mi>R</mi><mo>)</mo>
+                            <mo>=</mo>
+                            <msqrt><mfrac><mrow><mn>2</mn><mi>G</mi><mi>M</mi></mrow><mi>R</mi></mfrac></msqrt>
+                        </mrow>
+                    </math>
+                </div>
+            </div>
+            <p>只要把内部光速 <math class="math-inline" aria-label="c 撇"><msup><mi>c</mi><mo>&#8242;</mo></msup></math> 压到逃逸速度以下，区域内任何物体（包括光信号）都达不到逃逸速度，区域就与外部宇宙发生因果隔离——这正是小说里“事件视界”类比的逻辑内核。</p>
+            <p class="source-note"><strong>说明：</strong>式（9.2）的逃逸速度公式是牛顿引力下的标准结果，只说明“光速低于逃逸速度 ⇒ 因果隔离”这一逻辑；小说中具体降到多少属于设定（见下一段的数据说明）。真正的黑域还需负能量，见章末 Alcubierre (1994)。</p>
+        </div>
+
+        <p class="source-note"><strong>数据说明：</strong>上面"光速降低到 16.7 km/s(太阳系逃逸速度)"等取值是小说设定的<strong>教学示意</strong>,用于说明"把光速降到逃逸速度以下就形成事件视界"这一逻辑,不是工程参数。</p>
 
         <table>
             <thead>
